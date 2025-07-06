@@ -1,0 +1,606 @@
+/* styles.css */
+
+body {
+    font-family: "Inter", sans-serif;
+    background-color: #0d1117; /* Very dark background for space */
+    color: #e2e8f0; /* Light text */
+    overflow-x: hidden; /* Prevent horizontal scroll due to animations */
+    position: relative; /* Needed for absolute positioning of stars */
+    min-height: 100vh; /* Ensure body takes full height */
+}
+
+/* Custom scrollbar for a dark theme */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #2d3748; /* Darker track */
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+    background: #4a5568; /* Scrollbar color */
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #626e82; /* Lighter on hover */
+}
+
+/* Smooth scroll behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Animated text for hero section (tagline) */
+.animated-text {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 0.15em solid orange; /* The typing cursor */
+    animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+/* Typing effect */
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+/* Blinking cursor effect */
+@keyframes blink-caret {
+    from,
+    to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: orange;
+    }
+}
+
+/* General section padding */
+section {
+    padding: 80px 0;
+    position: relative; /* Ensure z-index works for content above background elements */
+    z-index: 10; /* Keep content above background */
+}
+
+/* Card hover effects & 3D Tilt */
+.card-effect {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    cursor: pointer; /* Indicate clickability */
+    transform-style: preserve-3d; /* Enable 3D transformations for children */
+    perspective: 1000px; /* Perspective for 3D effect */
+    will-change: transform, box-shadow; /* Optimize for animation */
+}
+.card-effect:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+}
+/* Project image rotation on hover is now handled by the 3D tilt on the card itself */
+.project-image-container img {
+    transition: transform 0.5s ease-in-out; /* Keep existing subtle image animation */
+}
+.project-image-container:hover img {
+    transform: scale(1.05); /* Slight zoom on hover, rotation now from parent */
+}
+
+/* Skill icon animations */
+.skill-icon {
+    transition: transform 0.4s ease-in-out;
+}
+.skill-icon:hover {
+    transform: rotate(10deg) scale(1.1); /* Rotate and scale on hover */
+}
+
+/* Animate on Scroll Effect */
+.animate-on-scroll {
+    opacity: 0; /* Initial state: hidden */
+    transform: translateY(50px); /* Initial state: slightly below */
+    transition: opacity 1s ease-out, transform 1s ease-out; /* Transition for animation */
+}
+
+.animate-on-scroll.is-visible {
+    opacity: 1; /* Target state: visible */
+    transform: translateY(0); /* Target state: original position */
+}
+
+/* Delay animation for successive items within a section */
+.animate-on-scroll:nth-child(1) {
+    transition-delay: 0.1s;
+}
+.animate-on-scroll:nth-child(2) {
+    transition-delay: 0.2s;
+}
+.animate-on-scroll:nth-child(3) {
+    transition-delay: 0.3s;
+}
+.animate-on-scroll:nth-child(4) {
+    transition-delay: 0.4s;
+}
+.animate-on-scroll:nth-child(5) {
+    transition-delay: 0.5s;
+}
+.animate-on-scroll:nth-child(6) {
+    transition-delay: 0.6s;
+}
+.animate-on-scroll:nth-child(7) {
+    transition-delay: 0.7s;
+}
+.animate-on-scroll:nth-child(8) {
+    transition-delay: 0.8s;
+}
+.animate-on-scroll:nth-child(9) {
+    transition-delay: 0.9s;
+}
+.animate-on-scroll:nth-child(10) {
+    transition-delay: 1s;
+}
+.animate-on-scroll:nth-child(11) {
+    transition-delay: 1.1s;
+}
+.animate-on-scroll:nth-child(12) {
+    transition-delay: 1.2s;
+}
+.animate-on-scroll:nth-child(13) {
+    transition-delay: 1.3s;
+}
+.animate-on-scroll:nth-child(14) {
+    transition-delay: 1.4s;
+}
+.animate-on-scroll:nth-child(15) {
+    transition-delay: 1.5s;
+}
+
+/* Galaxy Background Styles */
+.galaxy-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Allow clicks to pass through */
+    z-index: -1; /* Send it to the very back */
+    background: radial-gradient(
+        ellipse at bottom,
+        #0a0a0a 0%,
+        #000 100%
+    ); /* Subtle nebula-like background */
+}
+
+.star {
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    opacity: 0;
+    animation: twinkle 5s infinite alternate; /* Twinkle effect */
+}
+
+@keyframes twinkle {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+}
+
+/* Asteroid Styles */
+.asteroid {
+    position: absolute;
+    background: linear-gradient(
+        135deg,
+        #4a5568,
+        #2d3748
+    ); /* Greyish rock color */
+    border-radius: 50%; /* Start as a circle for base shape */
+    opacity: 0;
+    transform: rotate(0deg);
+    animation: fall-and-rotate 15s linear infinite; /* Increased duration for smoother fall */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    /* Complex shape via clip-path for asteroid look */
+    clip-path: polygon(
+        20% 0%,
+        80% 0%,
+        100% 20%,
+        100% 80%,
+        80% 100%,
+        20% 100%,
+        0% 80%,
+        0% 20%
+    );
+}
+
+@keyframes fall-and-rotate {
+    0% {
+        top: -10%; /* Start off-screen at the top */
+        left: var(
+            --start-left
+        ); /* Use CSS variable for random horizontal start */
+        opacity: 0;
+        transform: rotate(0deg) scale(var(--scale));
+    }
+    10% {
+        opacity: 0.7; /* Slightly reduced max opacity for subtlety */
+    }
+    90% {
+        opacity: 0.7;
+    }
+    100% {
+        top: 110%; /* End off-screen at the bottom */
+        left: var(--end-left); /* Use CSS variable for random horizontal end */
+        opacity: 0; /* Fade out as it exits */
+        transform: rotate(360deg) scale(var(--scale)); /* Full rotation */
+    }
+}
+
+/* Comet Styles */
+.comet {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background: linear-gradient(to right, #ffffff, rgba(255, 255, 255, 0));
+    border-radius: 50%;
+    opacity: 0;
+    filter: blur(1px); /* Soft glow */
+    animation: comet-fall 6s linear infinite; /* Increased duration for smoother fall */
+    pointer-events: none;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+}
+
+@keyframes comet-fall {
+    0% {
+        transform: translate(0, 0) scale(0.5) rotate(45deg);
+        opacity: 0;
+        top: var(--start-y, -10%);
+        left: var(--start-x, -10%);
+    }
+    5% {
+        opacity: 0.9; /* Slightly reduced max opacity for subtlety */
+    }
+    95% {
+        opacity: 0.9;
+    }
+    100% {
+        transform: translate(var(--travel-x, 100vw), var(--travel-y, 100vh))
+            scale(0.8) rotate(45deg);
+        opacity: 0;
+        top: var(--end-y, 110%);
+        left: var(--end-x, 110%);
+    }
+}
+
+/* Nebula Styles */
+.nebula {
+    position: absolute;
+    background: radial-gradient(
+        circle,
+        rgba(79, 70, 229, 0.1) 0%,
+        rgba(235, 159, 10, 0.05) 50%,
+        rgba(0, 0, 0, 0) 100%
+    );
+    border-radius: 50%;
+    filter: blur(20px); /* Very soft blur */
+    opacity: 0;
+    animation: nebula-flow 25s infinite alternate ease-in-out; /* Increased duration for smoother flow */
+    pointer-events: none;
+    transform: scale(0.5);
+    will-change: transform, opacity;
+}
+
+@keyframes nebula-flow {
+    0% {
+        opacity: 0;
+        transform: scale(0.5) translate(0, 0);
+    }
+    25% {
+        opacity: 0.18;
+        transform: scale(0.7) translate(10%, 5%);
+    } /* Adjusted max opacity */
+    50% {
+        opacity: 0.12;
+        transform: scale(0.6) translate(-5%, 10%);
+    } /* Adjusted max opacity */
+    75% {
+        opacity: 0.2;
+        transform: scale(0.8) translate(15%, -5%);
+    } /* Adjusted max opacity */
+    100% {
+        opacity: 0;
+        transform: scale(0.5) translate(0, 0);
+    }
+}
+
+/* Space Ship Styles */
+.space-ship {
+    position: absolute;
+    opacity: 0;
+    animation: ship-drift 20s linear infinite,
+        ship-pulse 4s infinite alternate ease-in-out; /* Increased drift duration */
+    pointer-events: none;
+    z-index: -1; /* Behind content */
+}
+
+.space-ship img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Ensures image fits without stretching */
+    filter: drop-shadow(0 0 5px rgba(129, 140, 248, 0.3)); /* Subtle glow */
+}
+
+@keyframes ship-drift {
+    0% {
+        top: var(--start-y);
+        left: var(--start-x);
+        transform: translate(0, 0) rotate(var(--initial-rotation));
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.5;
+    } /* Slightly reduced max opacity for subtlety */
+    90% {
+        opacity: 0.5;
+    }
+    100% {
+        top: var(--end-y);
+        left: var(--end-x);
+        transform: translate(var(--drift-x), var(--drift-y))
+            rotate(var(--final-rotation));
+        opacity: 0; /* Fade out */
+    }
+}
+
+@keyframes ship-pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.02);
+    } /* Slight pulse effect */
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Floating effect for main content sections */
+.float-always {
+    animation: float-effect 6s ease-in-out infinite alternate;
+}
+
+@keyframes float-effect {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+/* Apply float-always to sections */
+section.float-always {
+    animation: float-effect 6s ease-in-out infinite alternate;
+}
+
+/* Ensure individual cards get their own float animation with unique delays */
+.skill-card.float-always,
+.project-card.float-always,
+.experience-item.float-always,
+footer.float-always {
+    animation: float-effect 6s ease-in-out infinite alternate;
+}
+
+/* Multilingual "Hello, I am" animation for Hero H1 */
+#hero-main-greeting-container {
+    display: flex; /* Use flex to center content horizontally and vertically */
+    justify-content: center;
+    align-items: center;
+    min-height: 84px; /* Sufficient height for large text to prevent layout shifts */
+    width: 100%; /* Take full width of parent */
+}
+#hero-main-greeting-container span {
+    display: block; /* Ensures span takes full width for text-align center if needed */
+    text-align: center;
+    /* Transitions for the flashing effect */
+    transition: opacity 0.05s ease-out, transform 0.05s ease-out; /* Faster transitions */
+    will-change: opacity, transform;
+}
+
+/* Modal Styles */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Dark semi-transparent background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Above all other content */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal-overlay.is-open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    background-color: #1a202c; /* Dark modal background */
+    color: #e2e8f0;
+    padding: 2.5rem; /* Increased padding */
+    border-radius: 1rem; /* More rounded */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
+    width: 90%;
+    max-width: 800px; /* Max width for readability */
+    max-height: 90vh; /* Max height to fit viewport */
+    overflow-y: auto; /* Scroll if content is too long */
+    position: relative;
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+}
+
+.modal-overlay.is-open .modal-content {
+    transform: scale(1);
+}
+
+.modal-close-button {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    font-size: 1.8rem; /* Larger close icon */
+    color: #e2e8f0;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.modal-close-button:hover {
+    color: #5c6bc0;
+}
+
+.modal-section-title {
+    color: #a0aec0; /* Lighter gray for section titles */
+    font-weight: 600;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-size: 1.25rem;
+}
+
+.modal-tech-tag {
+    background-color: #2d3748;
+    color: #a0aec0;
+    padding: 0.3rem 0.75rem;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+    display: inline-block; /* For proper spacing */
+}
+
+.modal-cert-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+.modal-cert-item i {
+    color: #4c51bf; /* Indigo for checkmark */
+    margin-right: 0.5rem;
+}
+
+/* Social Icon specific styles for hover effects */
+.social-icon-link {
+    display: inline-block;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+.social-icon-link:hover {
+    transform: scale(1.2) translateY(-3px); /* Pop out and slight lift */
+}
+.social-icon-link .fab,
+.social-icon-link .fas {
+    transition: color 0.3s ease;
+}
+.social-icon-link.github:hover .fab {
+    color: #ffffff;
+} /* White */
+.social-icon-link.linkedin:hover .fab {
+    color: #0077b5;
+} /* LinkedIn Blue */
+.social-icon-link.instagram:hover .fab {
+    /* Instagram gradient effect on hover */
+    background: radial-gradient(
+        circle at 30% 107%,
+        #fdf497 0%,
+        #fdf497 5%,
+        #fd5949 45%,
+        #d6249f 60%,
+        #285aeb 90%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.social-icon-link.gmail:hover .fas {
+    color: #ea4335;
+} /* Gmail Red */
+
+/* Flashy Logo Animation */
+@keyframes logo-glow-pulse {
+    0% {
+        filter: drop-shadow(0 0 5px rgba(129, 140, 248, 0.5));
+    } /* Subtle initial glow */
+    50% {
+        filter: drop-shadow(0 0 15px rgba(129, 140, 248, 0.8))
+            drop-shadow(0 0 30px rgba(235, 159, 10, 0.3));
+    } /* Stronger glow + orange accent */
+    100% {
+        filter: drop-shadow(0 0 5px rgba(129, 140, 248, 0.5));
+    }
+}
+.website-logo-flashy {
+    animation: logo-glow-pulse 3s infinite alternate ease-in-out;
+    transform-origin: center; /* Ensure rotation is centered */
+}
+/* Preserve existing hover rotation */
+.website-logo-flashy:hover {
+    transform: rotate(
+        12deg
+    ); /* Apply specific hover transform without affecting animation */
+}
+
+.email-tooltip-container {
+    position: relative; /* Needed for positioning the tooltip content */
+    display: inline-block; /* To make the container wrap its content */
+}
+
+.tooltip-content {
+    visibility: hidden;
+    opacity: 0;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 10px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    transition: opacity 0.3s, visibility 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: medium;
+}
+
+.email-tooltip-container:hover .tooltip-content {
+    visibility: visible;
+    opacity: 1;
+}
+
+.copy-button {
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1em; /* Adjust as needed */
+    padding: 0;
+}
+
+.copy-button:hover {
+    color: #007bff; /* Example hover color */
+}
