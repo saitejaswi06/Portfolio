@@ -40,21 +40,21 @@ function createSnowflakes() {
     for (let i = 0; i < numSnowflakes; i++) {
         const snowflake = document.createElement("div");
         snowflake.classList.add("snowflake");
-        
-        const size = Math.random() * 5 + 2; 
+
+        const size = Math.random() * 5 + 2;
         snowflake.style.width = `${size}px`;
         snowflake.style.height = `${size}px`;
         snowflake.style.left = `${Math.random() * 100}vw`;
-        
-        const duration = Math.random() * 10 + 5; 
+
+        const duration = Math.random() * 10 + 5;
         snowflake.style.animationDuration = `${duration}s`;
-        
+
         const delay = Math.random() * 10;
-        snowflake.style.animationDelay = `-${delay}s`; 
-        
-        const drift = (Math.random() - 0.5) * 20; 
+        snowflake.style.animationDelay = `-${delay}s`;
+
+        const drift = (Math.random() - 0.5) * 20;
         snowflake.style.setProperty('--drift', `${drift}vw`);
-        
+
         bg.appendChild(snowflake);
     }
 }
@@ -567,19 +567,14 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 document.addEventListener('DOMContentLoaded', function () {
-    const copyButton = document.querySelector('.copy-button');
-    const emailAddressSpan = document.getElementById('email-address');
+    const mailCopyBtn = document.getElementById('mail-copy-btn');
 
-    if (copyButton && emailAddressSpan) {
-        copyButton.addEventListener('click', function () {
-            const email = emailAddressSpan.textContent;
+    if (mailCopyBtn) {
+        mailCopyBtn.addEventListener('click', function () {
+            const email = "saitejaswi1002@gmail.com";
 
             navigator.clipboard.writeText(email).then(() => {
-                const originalIcon = copyButton.innerHTML;
-                copyButton.innerHTML = '<i class="fas fa-check"></i>';
-                setTimeout(() => {
-                    copyButton.innerHTML = originalIcon;
-                }, 2000);
+                showMessageBox("Email copied to the clipboard!", "info");
             }).catch(err => {
                 console.error('Failed to copy email: ', err);
                 const textArea = document.createElement('textarea');
@@ -589,11 +584,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 document.execCommand('copy');
                 textArea.remove();
 
-                const originalIcon = copyButton.innerHTML;
-                copyButton.innerHTML = '<i class="fas fa-check"></i>';
-                setTimeout(() => {
-                    copyButton.innerHTML = originalIcon;
-                }, 2000);
+                showMessageBox("mail-id copied to the clipboard", "info");
             });
         });
     }
