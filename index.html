@@ -15,18 +15,24 @@
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
         />
         <link rel="stylesheet" href="styles.css" />
+    
+        <script>
+            tailwind.config = {
+                darkMode: 'class',
+            }
+        </script>
     </head>
-    <body class="bg-gray-900 text-gray-200">
+    <body class="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200">
         <div class="galaxy-background"></div>
         <header
-            class="bg-gray-800 p-4 shadow-lg sticky top-0 z-50 rounded-b-lg"
+            class="bg-white dark:bg-gray-800 p-4 shadow-lg sticky top-0 z-50 rounded-b-lg"
         >
             <nav
                 class="container mx-auto flex justify-between items-center px-4 md:px-0"
             >
                 <a
                     href="#hero"
-                    class="flex items-center text-indigo-400 hover:text-indigo-300 transition-colors duration-300"
+                    class="flex items-center text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 dark:text-indigo-300 transition-colors duration-300"
                 >
                     <img
                         id="website-logo"
@@ -38,87 +44,93 @@
                 <div class="hidden md:flex space-x-6">
                     <a
                         href="#about"
-                        class="text-gray-300 hover:text-indigo-400 transition-colors duration-300"
+                        class="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:text-indigo-400 transition-colors duration-300"
                         >About</a
                     >
                     <a
                         href="#experience"
-                        class="text-gray-300 hover:text-indigo-400 transition-colors duration-300"
+                        class="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:text-indigo-400 transition-colors duration-300"
                         >Education</a
                     >
                     <a
                         href="#skills"
-                        class="text-gray-300 hover:text-indigo-400 transition-colors duration-300"
+                        class="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:text-indigo-400 transition-colors duration-300"
                         >Skills</a
                     >
                     <a
                         href="#projects"
-                        class="text-gray-300 hover:text-indigo-400 transition-colors duration-300"
+                        class="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:text-indigo-400 transition-colors duration-300"
                         >Projects</a
                     >
 
                     <a
                         href="#certifications"
-                        class="text-gray-300 hover:text-indigo-400 transition-colors duration-300"
+                        class="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:text-indigo-400 transition-colors duration-300"
                         >Certifications</a
                     >
                     <a
                         href="#extracurriculars"
-                        class="text-gray-300 hover:text-indigo-400 transition-colors duration-300"
+                        class="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:text-indigo-400 transition-colors duration-300"
                         >Extracurriculars</a
                     >
                     <a
                         href="#contact"
-                        class="text-gray-300 hover:text-indigo-400 transition-colors duration-300"
+                        class="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:text-indigo-400 transition-colors duration-300"
                         >Contact</a
                     >
                 </div>
-                <!-- Mobile Menu Button -->
-                <button
-                    id="mobile-menu-button"
-                    class="md:hidden text-gray-300 focus:outline-none"
-                >
-                    <i class="fas fa-bars text-xl"></i>
-                </button>
+                <div class="flex items-center space-x-4 md:space-x-6 md:ml-6">
+                    <!-- Theme Toggle Button -->
+                    <button id="theme-toggle" aria-label="Toggle Dark Mode" class="text-gray-700 dark:text-gray-300 focus:outline-none hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+                        <i id="theme-icon" class="fas fa-moon text-xl"></i>
+                    </button>
+                    <!-- Mobile Menu Button -->
+                    <button
+                        id="mobile-menu-button"
+                        class="md:hidden text-gray-700 dark:text-gray-300 focus:outline-none"
+                    >
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
             </nav>
             <!-- Mobile Menu -->
             <div
                 id="mobile-menu"
-                class="hidden md:hidden mt-4 space-y-2 text-center bg-gray-700 p-4 rounded-lg"
+                class="hidden md:hidden mt-4 space-y-2 text-center bg-gray-100 dark:bg-gray-700 p-4 rounded-lg"
             >
                 <a
                     href="#about"
-                    class="block text-gray-200 hover:text-indigo-400 py-2"
+                    class="block text-gray-800 dark:text-gray-200 hover:text-indigo-600 dark:text-indigo-400 py-2"
                     >About</a
                 >
                 <a
                     href="#experience"
-                    class="block text-gray-200 hover:text-indigo-400 py-2"
+                    class="block text-gray-800 dark:text-gray-200 hover:text-indigo-600 dark:text-indigo-400 py-2"
                     >Education</a
                 >
                 <a
                     href="#skills"
-                    class="block text-gray-200 hover:text-indigo-400 py-2"
+                    class="block text-gray-800 dark:text-gray-200 hover:text-indigo-600 dark:text-indigo-400 py-2"
                     >Skills</a
                 >
                 <a
                     href="#projects"
-                    class="block text-gray-200 hover:text-indigo-400 py-2"
+                    class="block text-gray-800 dark:text-gray-200 hover:text-indigo-600 dark:text-indigo-400 py-2"
                     >Projects</a
                 >
                 <a
                     href="#certifications"
-                    class="block text-gray-200 hover:text-indigo-400 py-2"
+                    class="block text-gray-800 dark:text-gray-200 hover:text-indigo-600 dark:text-indigo-400 py-2"
                     >Certifications</a
                 >
                 <a
                     href="#extracurriculars"
-                    class="block text-gray-200 hover:text-indigo-400 py-2"
+                    class="block text-gray-800 dark:text-gray-200 hover:text-indigo-600 dark:text-indigo-400 py-2"
                     >Extracurriculars</a
                 >
                 <a
                     href="#contact"
-                    class="block text-gray-200 hover:text-indigo-400 py-2"
+                    class="block text-gray-800 dark:text-gray-200 hover:text-indigo-600 dark:text-indigo-400 py-2"
                     >Contact</a
                 >
             </div>
@@ -132,15 +144,15 @@
             >
                 <div class="relative z-10 max-w-4xl mx-auto">
                     <h1
-                        class="text-5xl md:text-7xl font-extrabold text-white mb-4 leading-tight"
+                        class="text-5xl md:text-7xl font-extrabold text-gray-900 dark:text-white mb-4 leading-tight"
                     >
                         <span
                             id="hero-main-greeting-container"
-                            class="text-indigo-400"
+                            class="text-indigo-600 dark:text-indigo-400"
                         ></span>
                     </h1>
                     <p
-                        class="text-2xl md:text-3xl text-gray-300 mb-8 animated-text"
+                        class="text-2xl md:text-3xl text-gray-700 dark:text-gray-300 mb-8 animated-text"
                     >
                         Innovating at the intersection of engineering and
                         intelligence.
@@ -148,16 +160,16 @@
                     <div class="flex flex-wrap justify-center gap-4">
                         <a
                             href="#projects"
-                            class="btn-primary bg-indigo-600 text-white px-8 py-3 rounded-full text-lg font-semibold shadow-lg hover:shadow-xl"
+                            class="btn-primary bg-indigo-600 text-gray-900 dark:text-white px-8 py-3 rounded-full text-lg font-semibold shadow-lg hover:shadow-xl"
                             >View My Work</a
                         >
                         <a
                             href="#contact"
-                            class="btn-primary bg-transparent border-2 border-indigo-600 text-indigo-300 px-8 py-3 rounded-full text-lg font-semibold hover:bg-indigo-600 hover:text-white"
+                            class="btn-primary bg-transparent border-2 border-indigo-600 text-indigo-700 dark:text-indigo-300 px-8 py-3 rounded-full text-lg font-semibold hover:bg-indigo-600 hover:text-gray-900 dark:text-white"
                             >Get in Touch</a
                         >
                     </div>
-                    <div class="mt-12 text-gray-400 text-sm">
+                    <div class="mt-12 text-gray-600 dark:text-gray-400 text-sm">
                         Scroll down to explore
                         <i class="fas fa-arrow-down ml-2 animate-bounce"></i>
                     </div>
@@ -167,10 +179,10 @@
             <!-- About Section -->
             <section
                 id="about"
-                class="relative container mx-auto px-6 py-16 rounded-lg shadow-xl bg-gray-800 my-16 animate-on-scroll float-always"
+                class="relative container mx-auto px-6 py-16 rounded-lg shadow-xl bg-white dark:bg-gray-800 my-16 animate-on-scroll float-always"
             >
                 <h2
-                    class="text-4xl font-bold text-center text-indigo-400 mb-12"
+                    class="text-4xl font-bold text-center text-indigo-600 dark:text-indigo-400 mb-12"
                 >
                     About Me
                 </h2>
@@ -186,7 +198,7 @@
                         />
                     </div>
                     <div
-                        class="md:w-2/3 text-lg text-gray-300 leading-relaxed animate-on-scroll"
+                        class="md:w-2/3 text-lg text-gray-700 dark:text-gray-300 leading-relaxed animate-on-scroll"
                         style="animation-delay: 0.4s"
                     >
                         <p class="mb-4">
@@ -198,9 +210,9 @@
                         </p>
                         <p class="mb-4">
                             Deeply passionate about
-                            <strong class="text-indigo-300">VLSI design</strong
+                            <strong class="text-indigo-700 dark:text-indigo-300">VLSI design</strong
                             >, I am particularly drawn to the intricacies of
-                            <strong class="text-indigo-300"
+                            <strong class="text-indigo-700 dark:text-indigo-300"
                                 >Analog, Digital, and Mixed-signal
                                 circuits</strong
                             >. I enjoy exploring how these domains interact to
@@ -209,7 +221,7 @@
                         </p>
                         <p>
                             With a keen interest in
-                            <strong class="text-indigo-300"
+                            <strong class="text-indigo-700 dark:text-indigo-300"
                                 >Semiconductor innovation and Hardware
                                 technologies</strong
                             >, I am always eager to contribute to cutting-edge
@@ -223,10 +235,10 @@
             <!-- Education Section -->
             <section
                 id="experience"
-                class="relative container mx-auto px-6 py-16 rounded-lg shadow-xl bg-gray-800 my-16 overflow-hidden animate-on-scroll float-always w-max"
+                class="relative container mx-auto px-6 py-16 rounded-lg shadow-xl bg-white dark:bg-gray-800 my-16 overflow-hidden animate-on-scroll float-always w-max"
             >
                 <h2
-                    class="text-4xl font-bold text-center text-indigo-400 mb-12"
+                    class="text-4xl font-bold text-center text-indigo-600 dark:text-indigo-400 mb-12"
                 >
                     Education
                 </h2>
@@ -237,20 +249,20 @@
                     <!-- Education 1 -->
                     <div class="relative float-always animate-on-scroll">
                         <div
-                            class="absolute w-4 h-4 bg-indigo-600 rounded-full -left-9 top-2 transform -translate-x-1/2 border-2 border-gray-800"
+                            class="absolute w-4 h-4 bg-indigo-600 rounded-full -left-9 top-2 transform -translate-x-1/2 border-2 border-gray-200 dark:border-gray-800"
                         ></div>
-                        <h3 class="text-2xl font-semibold text-gray-100">
+                        <h3 class="text-2xl font-semibold text-gray-900 dark:text-gray-100">
                             National Institute of technology, Calicut
                         </h3>
-                        <p class="text-indigo-300 text-lg mb-1">
+                        <p class="text-indigo-700 dark:text-indigo-300 text-lg mb-1">
                             B.Tech in Electrical and Electronics Engineering |
                             Aug 2023 – May 2027
                         </p>
-                        <p class="text-indigo-300 text-md mb-1">
+                        <p class="text-indigo-700 dark:text-indigo-300 text-md mb-1">
                             Kozhikode, Kerala
                         </p>
                         <ul
-                            class="list-disc list-inside text-gray-300 ml-4 space-y-2"
+                            class="list-disc list-inside text-gray-700 dark:text-gray-300 ml-4 space-y-2"
                         >
                             <li>Current CGPA: 8.00 / 10.00</li>
                             <li>
@@ -267,20 +279,20 @@
                     <!-- Experience 2 -->
                     <div class="relative float-always animate-on-scroll">
                         <div
-                            class="absolute w-4 h-4 bg-indigo-600 rounded-full -left-9 top-2 transform -translate-x-1/2 border-2 border-gray-800"
+                            class="absolute w-4 h-4 bg-indigo-600 rounded-full -left-9 top-2 transform -translate-x-1/2 border-2 border-gray-200 dark:border-gray-800"
                         ></div>
-                        <h3 class="text-2xl font-semibold text-gray-100">
+                        <h3 class="text-2xl font-semibold text-gray-900 dark:text-gray-100">
                             Lakshya International School
                         </h3>
-                        <p class="text-indigo-300 text-lg mb-1">
+                        <p class="text-indigo-700 dark:text-indigo-300 text-lg mb-1">
                             Class XII – CBSE | PCM | Jun 2021 – May 2023
                             Kakinada, Andhra Pradesh
                         </p>
-                        <p class="text-indigo-300 text-md mb-1">
+                        <p class="text-indigo-700 dark:text-indigo-300 text-md mb-1">
                             Kakinada, Andhra Pradesh
                         </p>
                         <ul
-                            class="list-disc list-inside text-gray-300 ml-4 space-y-2"
+                            class="list-disc list-inside text-gray-700 dark:text-gray-300 ml-4 space-y-2"
                         >
                             <li>Score: 450/500</li>
                             <li>
@@ -297,19 +309,19 @@
                     <!-- Education -->
                     <div class="relative float-always animate-on-scroll">
                         <div
-                            class="absolute w-4 h-4 bg-indigo-600 rounded-full -left-9 top-2 transform -translate-x-1/2 border-2 border-gray-800"
+                            class="absolute w-4 h-4 bg-indigo-600 rounded-full -left-9 top-2 transform -translate-x-1/2 border-2 border-gray-200 dark:border-gray-800"
                         ></div>
-                        <h3 class="text-2xl font-semibold text-gray-100">
+                        <h3 class="text-2xl font-semibold text-gray-900 dark:text-gray-100">
                             Aditya Talent School
                         </h3>
-                        <p class="text-indigo-300 text-lg mb-1">
+                        <p class="text-indigo-700 dark:text-indigo-300 text-lg mb-1">
                             Class X | Jun 2020 – Apr 2021
                         </p>
-                        <p class="text-indigo-300 text-md mb-1">
+                        <p class="text-indigo-700 dark:text-indigo-300 text-md mb-1">
                             Kakinada, Andhra Pradesh
                         </p>
                         <ul
-                            class="list-disc list-inside text-gray-300 ml-4 space-y-2"
+                            class="list-disc list-inside text-gray-700 dark:text-gray-300 ml-4 space-y-2"
                         >
                             <li>CGPA: 10.0 / 10.0</li>
                             <li>
@@ -328,16 +340,16 @@
             <!-- Skills Section -->
             <section
                 id="skills"
-                class="relative container mx-auto px-6 py-16 rounded-lg shadow-xl bg-gray-800 my-16 overflow-hidden animate-on-scroll float-always skills-section-design"
+                class="relative container mx-auto px-6 py-16 rounded-lg shadow-xl bg-white dark:bg-gray-800 my-16 overflow-hidden animate-on-scroll float-always skills-section-design"
             >
                 <h2
-                    class="text-4xl font-bold text-center text-indigo-400 mb-12"
+                    class="text-4xl font-bold text-center text-indigo-600 dark:text-indigo-400 mb-12"
                 >
                     My Skills
                 </h2>
                 <div class="mb-12">
                     <h3
-                        class="text-3xl font-bold text-center text-gray-200 mb-8"
+                        class="text-3xl font-bold text-center text-gray-800 dark:text-gray-200 mb-8"
                     >
                         Programming Languages
                     </h3>
@@ -346,7 +358,7 @@
                     >
                         <!-- Skill: C -->
                         <div
-                            class="skill-card bg-gray-700 p-6 rounded-lg shadow-lg card-effect animated-skill-card animate-on-scroll"
+                            class="skill-card bg-gray-100 dark:bg-gray-700 p-6 rounded-lg shadow-lg card-effect animated-skill-card animate-on-scroll"
                             style="--delay: 0s"
                             data-type="skill"
                             data-title="C Programming"
@@ -356,13 +368,13 @@
                             <i
                                 class="fas fa-file-code text-6xl text-blue-500 mb-4 skill-icon"
                             ></i>
-                            <h3 class="text-xl font-semibold text-gray-100">
+                            <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">
                                 C Programming
                             </h3>
                         </div>
                         <!-- Skill: Python -->
                         <div
-                            class="skill-card bg-gray-700 p-6 rounded-lg shadow-lg card-effect animated-skill-card animate-on-scroll"
+                            class="skill-card bg-gray-100 dark:bg-gray-700 p-6 rounded-lg shadow-lg card-effect animated-skill-card animate-on-scroll"
                             style="--delay: 0.1s"
                             data-type="skill"
                             data-title="Python"
@@ -372,13 +384,13 @@
                             <i
                                 class="fab fa-python text-6xl text-yellow-500 mb-4 skill-icon"
                             ></i>
-                            <h3 class="text-xl font-semibold text-gray-100">
+                            <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">
                                 Python
                             </h3>
                         </div>
                         <!-- Skill: Verilog -->
                         <div
-                            class="skill-card bg-gray-700 p-6 rounded-lg shadow-lg card-effect animated-skill-card animate-on-scroll"
+                            class="skill-card bg-gray-100 dark:bg-gray-700 p-6 rounded-lg shadow-lg card-effect animated-skill-card animate-on-scroll"
                             style="--delay: 0.2s"
                             data-type="skill"
                             data-title="Verilog"
@@ -388,13 +400,13 @@
                             <i
                                 class="fas fa-microchip text-6xl text-green-500 mb-4 skill-icon"
                             ></i>
-                            <h3 class="text-xl font-semibold text-gray-100">
+                            <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">
                                 Verilog
                             </h3>
                         </div>
                         <!-- Skill: MATLAB -->
                         <div
-                            class="skill-card bg-gray-700 p-6 rounded-lg shadow-lg card-effect animated-skill-card animate-on-scroll"
+                            class="skill-card bg-gray-100 dark:bg-gray-700 p-6 rounded-lg shadow-lg card-effect animated-skill-card animate-on-scroll"
                             style="--delay: 0.3s"
                             data-type="skill"
                             data-title="MATLAB"
@@ -404,13 +416,13 @@
                             <i
                                 class="fas fa-calculator text-6xl text-red-500 mb-4 skill-icon"
                             ></i>
-                            <h3 class="text-xl font-semibold text-gray-100">
+                            <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">
                                 MATLAB
                             </h3>
                         </div>
                         <!-- Skill: SQL -->
                         <div
-                            class="skill-card bg-gray-700 p-6 rounded-lg shadow-lg card-effect animated-skill-card animate-on-scroll"
+                            class="skill-card bg-gray-100 dark:bg-gray-700 p-6 rounded-lg shadow-lg card-effect animated-skill-card animate-on-scroll"
                             style="--delay: 0.4s"
                             data-type="skill"
                             data-title="SQL"
@@ -418,15 +430,15 @@
                             data-certifications="Nil"
                         >
                             <i
-                                class="fas fa-database text-6xl text-gray-400 mb-4 skill-icon"
+                                class="fas fa-database text-6xl text-gray-600 dark:text-gray-400 mb-4 skill-icon"
                             ></i>
-                            <h3 class="text-xl font-semibold text-gray-100">
+                            <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">
                                 SQL
                             </h3>
                         </div>
                         <!-- Skill: Git -->
                         <div
-                            class="skill-card bg-gray-700 p-6 rounded-lg shadow-lg card-effect animated-skill-card animate-on-scroll"
+                            class="skill-card bg-gray-100 dark:bg-gray-700 p-6 rounded-lg shadow-lg card-effect animated-skill-card animate-on-scroll"
                             style="--delay: 0.5s"
                             data-type="skill"
                             data-title="Git"
@@ -436,13 +448,13 @@
                             <i
                                 class="fab fa-git-alt text-6xl text-orange-600 mb-4 skill-icon"
                             ></i>
-                            <h3 class="text-xl font-semibold text-gray-100">
+                            <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">
                                 Git
                             </h3>
                         </div>
                         <!-- Skill: OpenCV -->
                         <div
-                            class="skill-card bg-gray-700 p-6 rounded-lg shadow-lg card-effect animated-skill-card animate-on-scroll"
+                            class="skill-card bg-gray-100 dark:bg-gray-700 p-6 rounded-lg shadow-lg card-effect animated-skill-card animate-on-scroll"
                             style="--delay: 0.6s"
                             data-type="skill"
                             data-title="OpenCV"
@@ -452,13 +464,13 @@
                             <i
                                 class="fas fa-camera text-6xl text-purple-400 mb-4 skill-icon"
                             ></i>
-                            <h3 class="text-xl font-semibold text-gray-100">
+                            <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">
                                 OpenCV
                             </h3>
                         </div>
                         <!-- Skill: ROS2 -->
                         <div
-                            class="skill-card bg-gray-700 p-6 rounded-lg shadow-lg card-effect animated-skill-card animate-on-scroll"
+                            class="skill-card bg-gray-100 dark:bg-gray-700 p-6 rounded-lg shadow-lg card-effect animated-skill-card animate-on-scroll"
                             style="--delay: 0.7s"
                             data-type="skill"
                             data-title="ROS2"
@@ -468,13 +480,13 @@
                             <i
                                 class="fas fa-robot text-6xl text-teal-400 mb-4 skill-icon"
                             ></i>
-                            <h3 class="text-xl font-semibold text-gray-100">
+                            <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">
                                 ROS2
                             </h3>
                         </div>
                         <!-- Skill: OOPs -->
                         <div
-                            class="skill-card bg-gray-700 p-6 rounded-lg shadow-lg card-effect animated-skill-card animate-on-scroll"
+                            class="skill-card bg-gray-100 dark:bg-gray-700 p-6 rounded-lg shadow-lg card-effect animated-skill-card animate-on-scroll"
                             style="--delay: 0.8s"
                             data-type="skill"
                             data-title="Object-Oriented Programming (OOP)"
@@ -482,15 +494,15 @@
                             data-certifications="Nil"
                         >
                             <i
-                                class="fas fa-object-group text-6xl text-indigo-400 mb-4 skill-icon"
+                                class="fas fa-object-group text-6xl text-indigo-600 dark:text-indigo-400 mb-4 skill-icon"
                             ></i>
-                            <h3 class="text-xl font-semibold text-gray-100">
+                            <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">
                                 OOP
                             </h3>
                         </div>
                         <!-- Skill: Arduino Programming -->
                         <div
-                            class="skill-card bg-gray-700 p-6 rounded-lg shadow-lg card-effect animated-skill-card animate-on-scroll"
+                            class="skill-card bg-gray-100 dark:bg-gray-700 p-6 rounded-lg shadow-lg card-effect animated-skill-card animate-on-scroll"
                             style="--delay: 0.9s"
                             data-type="skill"
                             data-title="Arduino Programming"
@@ -500,13 +512,13 @@
                             <i
                                 class="fas fa-microchip text-6xl text-blue-300 mb-4 skill-icon"
                             ></i>
-                            <h3 class="text-xl font-semibold text-gray-100">
+                            <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">
                                 Arduino Programming
                             </h3>
                         </div>
                         <!-- Skill: YOLO -->
                         <div
-                            class="skill-card bg-gray-700 p-6 rounded-lg shadow-lg card-effect animated-skill-card animate-on-scroll"
+                            class="skill-card bg-gray-100 dark:bg-gray-700 p-6 rounded-lg shadow-lg card-effect animated-skill-card animate-on-scroll"
                             style="--delay: 1s"
                             data-type="skill"
                             data-title="YOLO (You Only Look Once)"
@@ -516,13 +528,13 @@
                             <i
                                 class="fas fa-crosshairs text-6xl text-red-400 mb-4 skill-icon"
                             ></i>
-                            <h3 class="text-xl font-semibold text-gray-100">
+                            <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">
                                 YOLO
                             </h3>
                         </div>
                         <!-- Skill: Assembly -->
                         <div
-                            class="skill-card bg-gray-700 p-6 rounded-lg shadow-lg card-effect animated-skill-card animate-on-scroll"
+                            class="skill-card bg-gray-100 dark:bg-gray-700 p-6 rounded-lg shadow-lg card-effect animated-skill-card animate-on-scroll"
                             style="--delay: 1.1s"
                             data-type="skill"
                             data-title="Assembly Language"
@@ -532,13 +544,13 @@
                             <i
                                 class="fas fa-code text-6xl text-green-400 mb-4 skill-icon"
                             ></i>
-                            <h3 class="text-xl font-semibold text-gray-100">
+                            <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">
                                 Assembly
                             </h3>
                         </div>
                         <!-- Skill: MicroPython -->
                         <div
-                            class="skill-card bg-gray-700 p-6 rounded-lg shadow-lg card-effect animated-skill-card animate-on-scroll"
+                            class="skill-card bg-gray-100 dark:bg-gray-700 p-6 rounded-lg shadow-lg card-effect animated-skill-card animate-on-scroll"
                             style="--delay: 1.2s"
                             data-type="skill"
                             data-title="MicroPython"
@@ -548,7 +560,7 @@
                             <i
                                 class="fas fa-ethernet text-6xl text-blue-500 mb-4 skill-icon"
                             ></i>
-                            <h3 class="text-xl font-semibold text-gray-100">
+                            <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">
                                 MicroPython
                             </h3>
                         </div>
@@ -557,7 +569,7 @@
 
                 <div>
                     <h3
-                        class="text-3xl font-bold text-center text-gray-200 mb-8"
+                        class="text-3xl font-bold text-center text-gray-800 dark:text-gray-200 mb-8"
                     >
                         Tools & Design Frameworks
                     </h3>
@@ -566,7 +578,7 @@
                     >
                         <!-- Tool: Vivado Design Suite -->
                         <div
-                            class="skill-card bg-gray-700 p-6 rounded-lg shadow-lg card-effect animated-skill-card animate-on-scroll"
+                            class="skill-card bg-gray-100 dark:bg-gray-700 p-6 rounded-lg shadow-lg card-effect animated-skill-card animate-on-scroll"
                             style="--delay: 0s"
                             data-type="tool"
                             data-title="Vivado Design Suite"
@@ -576,13 +588,13 @@
                             <i
                                 class="fas fa-microchip text-6xl text-purple-400 mb-4 skill-icon"
                             ></i>
-                            <h3 class="text-xl font-semibold text-gray-100">
+                            <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">
                                 Vivado Design Suite
                             </h3>
                         </div>
                         <!-- Tool: LTSpice -->
                         <div
-                            class="skill-card bg-gray-700 p-6 rounded-lg shadow-lg card-effect animated-skill-card animate-on-scroll"
+                            class="skill-card bg-gray-100 dark:bg-gray-700 p-6 rounded-lg shadow-lg card-effect animated-skill-card animate-on-scroll"
                             style="--delay: 0.1s"
                             data-type="tool"
                             data-title="LTSpice"
@@ -592,13 +604,13 @@
                             <i
                                 class="fas fa-wave-square text-6xl text-red-400 mb-4 skill-icon"
                             ></i>
-                            <h3 class="text-xl font-semibold text-gray-100">
+                            <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">
                                 LTSpice
                             </h3>
                         </div>
                         <!-- Tool: Simulink -->
                         <div
-                            class="skill-card bg-gray-700 p-6 rounded-lg shadow-lg card-effect animated-skill-card animate-on-scroll"
+                            class="skill-card bg-gray-100 dark:bg-gray-700 p-6 rounded-lg shadow-lg card-effect animated-skill-card animate-on-scroll"
                             style="--delay: 0.2s"
                             data-type="tool"
                             data-title="Simulink"
@@ -608,13 +620,13 @@
                             <i
                                 class="fas fa-chart-line text-6xl text-blue-400 mb-4 skill-icon"
                             ></i>
-                            <h3 class="text-xl font-semibold text-gray-100">
+                            <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">
                                 Simulink
                             </h3>
                         </div>
                         <!-- Tool: Proteus -->
                         <div
-                            class="skill-card bg-gray-700 p-6 rounded-lg shadow-lg card-effect animated-skill-card animate-on-scroll"
+                            class="skill-card bg-gray-100 dark:bg-gray-700 p-6 rounded-lg shadow-lg card-effect animated-skill-card animate-on-scroll"
                             style="--delay: 0.3s"
                             data-type="tool"
                             data-title="Proteus"
@@ -624,13 +636,13 @@
                             <i
                                 class="fas fa-robot text-6xl text-teal-400 mb-4 skill-icon"
                             ></i>
-                            <h3 class="text-xl font-semibold text-gray-100">
+                            <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">
                                 Proteus
                             </h3>
                         </div>
                         <!-- Tool: QUCS -->
                         <div
-                            class="skill-card bg-gray-700 p-6 rounded-lg shadow-lg card-effect animated-skill-card animate-on-scroll"
+                            class="skill-card bg-gray-100 dark:bg-gray-700 p-6 rounded-lg shadow-lg card-effect animated-skill-card animate-on-scroll"
                             style="--delay: 0.4s"
                             data-type="tool"
                             data-title="QUCS"
@@ -640,13 +652,13 @@
                             <i
                                 class="fas fa-bezier-curve text-6xl text-orange-400 mb-4 skill-icon"
                             ></i>
-                            <h3 class="text-xl font-semibold text-gray-100">
+                            <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">
                                 QUCS
                             </h3>
                         </div>
                         <!-- Tool: Altium -->
                         <div
-                            class="skill-card bg-gray-700 p-6 rounded-lg shadow-lg card-effect animated-skill-card animate-on-scroll"
+                            class="skill-card bg-gray-100 dark:bg-gray-700 p-6 rounded-lg shadow-lg card-effect animated-skill-card animate-on-scroll"
                             style="--delay: 0.5s"
                             data-type="tool"
                             data-title="Altium Designer"
@@ -654,15 +666,15 @@
                             data-certifications="Nil"
                         >
                             <i
-                                class="fas fa-drafting-compass text-6xl text-indigo-400 mb-4 skill-icon"
+                                class="fas fa-drafting-compass text-6xl text-indigo-600 dark:text-indigo-400 mb-4 skill-icon"
                             ></i>
-                            <h3 class="text-xl font-semibold text-gray-100">
+                            <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">
                                 Altium Designer
                             </h3>
                         </div>
                         <!-- Tool: Tinkercad -->
                         <div
-                            class="skill-card bg-gray-700 p-6 rounded-lg shadow-lg card-effect animated-skill-card animate-on-scroll"
+                            class="skill-card bg-gray-100 dark:bg-gray-700 p-6 rounded-lg shadow-lg card-effect animated-skill-card animate-on-scroll"
                             style="--delay: 0.6s"
                             data-type="tool"
                             data-title="Tinkercad"
@@ -672,13 +684,13 @@
                             <i
                                 class="fas fa-lightbulb text-6xl text-yellow-400 mb-4 skill-icon"
                             ></i>
-                            <h3 class="text-xl font-semibold text-gray-100">
+                            <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">
                                 Tinkercad
                             </h3>
                         </div>
                         <!-- Tool: MPLAB -->
                         <div
-                            class="skill-card bg-gray-700 p-6 rounded-lg shadow-lg card-effect animated-skill-card animate-on-scroll"
+                            class="skill-card bg-gray-100 dark:bg-gray-700 p-6 rounded-lg shadow-lg card-effect animated-skill-card animate-on-scroll"
                             style="--delay: 0.7s"
                             data-type="tool"
                             data-title="MPLAB"
@@ -688,13 +700,13 @@
                             <i
                                 class="fas fa-laptop-code text-6xl text-purple-300 mb-4 skill-icon"
                             ></i>
-                            <h3 class="text-xl font-semibold text-gray-100">
+                            <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">
                                 MPLAB
                             </h3>
                         </div>
                         <!-- Tool: Raspberry Pi -->
                         <div
-                            class="skill-card bg-gray-700 p-6 rounded-lg shadow-lg card-effect animated-skill-card animate-on-scroll"
+                            class="skill-card bg-gray-100 dark:bg-gray-700 p-6 rounded-lg shadow-lg card-effect animated-skill-card animate-on-scroll"
                             style="--delay: 0.8s"
                             data-type="tool"
                             data-title="Raspberry Pi"
@@ -704,13 +716,13 @@
                             <i
                                 class="fab fa-raspberry-pi text-6xl text-red-500 mb-4 skill-icon"
                             ></i>
-                            <h3 class="text-xl font-semibold text-gray-100">
+                            <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">
                                 Raspberry Pi
                             </h3>
                         </div>
                         <!-- Tool: ESP -->
                         <div
-                            class="skill-card bg-gray-700 p-6 rounded-lg shadow-lg card-effect animated-skill-card animate-on-scroll"
+                            class="skill-card bg-gray-100 dark:bg-gray-700 p-6 rounded-lg shadow-lg card-effect animated-skill-card animate-on-scroll"
                             style="--delay: 0.9s"
                             data-type="tool"
                             data-title="ESP (ESP32/ESP8266)"
@@ -720,13 +732,13 @@
                             <i
                                 class="fas fa-wifi text-6xl text-blue-300 mb-4 skill-icon"
                             ></i>
-                            <h3 class="text-xl font-semibold text-gray-100">
+                            <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">
                                 ESP
                             </h3>
                         </div>
                         <!-- Tool: MS Word -->
                         <div
-                            class="skill-card bg-gray-700 p-6 rounded-lg shadow-lg card-effect animated-skill-card animate-on-scroll"
+                            class="skill-card bg-gray-100 dark:bg-gray-700 p-6 rounded-lg shadow-lg card-effect animated-skill-card animate-on-scroll"
                             style="--delay: 1s"
                             data-type="tool"
                             data-title="MS Word"
@@ -736,13 +748,13 @@
                             <i
                                 class="fas fa-file-word text-6xl text-blue-600 mb-4 skill-icon"
                             ></i>
-                            <h3 class="text-xl font-semibold text-gray-100">
+                            <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">
                                 MS Word
                             </h3>
                         </div>
                         <!-- Tool: Excel -->
                         <div
-                            class="skill-card bg-gray-700 p-6 rounded-lg shadow-lg card-effect animated-skill-card animate-on-scroll"
+                            class="skill-card bg-gray-100 dark:bg-gray-700 p-6 rounded-lg shadow-lg card-effect animated-skill-card animate-on-scroll"
                             style="--delay: 1.1s"
                             data-type="tool"
                             data-title="Excel"
@@ -752,13 +764,13 @@
                             <i
                                 class="fas fa-file-excel text-6xl text-green-600 mb-4 skill-icon"
                             ></i>
-                            <h3 class="text-xl font-semibold text-gray-100">
+                            <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">
                                 Excel
                             </h3>
                         </div>
                         <!-- Tool: Jupyter -->
                         <div
-                            class="skill-card bg-gray-700 p-6 rounded-lg shadow-lg card-effect animated-skill-card animate-on-scroll"
+                            class="skill-card bg-gray-100 dark:bg-gray-700 p-6 rounded-lg shadow-lg card-effect animated-skill-card animate-on-scroll"
                             style="--delay: 1.2s"
                             data-type="tool"
                             data-title="Jupyter Notebook"
@@ -768,13 +780,13 @@
                             <i
                                 class="fas fa-flask text-6xl text-orange-400 mb-4 skill-icon"
                             ></i>
-                            <h3 class="text-xl font-semibold text-gray-100">
+                            <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">
                                 Jupyter
                             </h3>
                         </div>
                         <!-- Tool: Google Collab -->
                         <div
-                            class="skill-card bg-gray-700 p-6 rounded-lg shadow-lg card-effect animated-skill-card animate-on-scroll"
+                            class="skill-card bg-gray-100 dark:bg-gray-700 p-6 rounded-lg shadow-lg card-effect animated-skill-card animate-on-scroll"
                             style="--delay: 1.3s"
                             data-type="tool"
                             data-title="Google Colaboratory"
@@ -784,13 +796,13 @@
                             <i
                                 class="fas fa-cloud text-6xl text-yellow-400 mb-4 skill-icon"
                             ></i>
-                            <h3 class="text-xl font-semibold text-gray-100">
+                            <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">
                                 Google Collab
                             </h3>
                         </div>
                         <!-- Tool: Linux -->
                         <div
-                            class="skill-card bg-gray-700 p-6 rounded-lg shadow-lg card-effect animated-skill-card animate-on-scroll"
+                            class="skill-card bg-gray-100 dark:bg-gray-700 p-6 rounded-lg shadow-lg card-effect animated-skill-card animate-on-scroll"
                             style="--delay: 1.4s"
                             data-type="tool"
                             data-title="Linux"
@@ -798,15 +810,15 @@
                             data-certifications="Nil"
                         >
                             <i
-                                class="fab fa-linux text-6xl text-gray-300 mb-4 skill-icon"
+                                class="fab fa-linux text-6xl text-gray-700 dark:text-gray-300 mb-4 skill-icon"
                             ></i>
-                            <h3 class="text-xl font-semibold text-gray-100">
+                            <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">
                                 Linux
                             </h3>
                         </div>
                         <!-- Tool: Wokwi -->
                         <div
-                            class="skill-card bg-gray-700 p-6 rounded-lg shadow-lg card-effect animated-skill-card animate-on-scroll"
+                            class="skill-card bg-gray-100 dark:bg-gray-700 p-6 rounded-lg shadow-lg card-effect animated-skill-card animate-on-scroll"
                             style="--delay: 1.5s"
                             data-type="tool"
                             data-title="Wokwi"
@@ -816,13 +828,13 @@
                             <i
                                 class="fas fa-code-branch text-6xl text-cyan-400 mb-4 skill-icon"
                             ></i>
-                            <h3 class="text-xl font-semibold text-gray-100">
+                            <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">
                                 Wokwi
                             </h3>
                         </div>
                         <!-- Tool: CMOS -->
                         <div
-                            class="skill-card bg-gray-700 p-6 rounded-lg shadow-lg card-effect animated-skill-card animate-on-scroll"
+                            class="skill-card bg-gray-100 dark:bg-gray-700 p-6 rounded-lg shadow-lg card-effect animated-skill-card animate-on-scroll"
                             style="--delay: 1.6s"
                             data-type="tool"
                             data-title="CMOS (Complementary Metal-Oxide-Semiconductor)"
@@ -840,13 +852,13 @@
                                     d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zM11 7h2v10h-2zM8 11h8v2H8z"
                                 />
                             </svg>
-                            <h3 class="text-xl font-semibold text-gray-100">
+                            <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">
                                 CMOS
                             </h3>
                         </div>
                         <!-- Tool: PID Control -->
                         <div
-                            class="skill-card bg-gray-700 p-6 rounded-lg shadow-lg card-effect animated-skill-card animate-on-scroll"
+                            class="skill-card bg-gray-100 dark:bg-gray-700 p-6 rounded-lg shadow-lg card-effect animated-skill-card animate-on-scroll"
                             style="--delay: 1.7s"
                             data-type="tool"
                             data-title="PID Control"
@@ -854,15 +866,15 @@
                             data-certifications="Nil"
                         >
                             <i
-                                class="fas fa-cogs text-6xl text-gray-400 mb-4 skill-icon"
+                                class="fas fa-cogs text-6xl text-gray-600 dark:text-gray-400 mb-4 skill-icon"
                             ></i>
-                            <h3 class="text-xl font-semibold text-gray-100">
+                            <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">
                                 PID Control
                             </h3>
                         </div>
                         <!-- Tool: Motor Control -->
                         <div
-                            class="skill-card bg-gray-700 p-6 rounded-lg shadow-lg card-effect animated-skill-card animate-on-scroll"
+                            class="skill-card bg-gray-100 dark:bg-gray-700 p-6 rounded-lg shadow-lg card-effect animated-skill-card animate-on-scroll"
                             style="--delay: 1.8s"
                             data-type="tool"
                             data-title="Motor Control"
@@ -872,13 +884,13 @@
                             <i
                                 class="fas fa-fan text-6xl text-pink-400 mb-4 skill-icon"
                             ></i>
-                            <h3 class="text-xl font-semibold text-gray-100">
+                            <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">
                                 Motor Control
                             </h3>
                         </div>
                         <!-- Tool: Anaconda -->
                         <div
-                            class="skill-card bg-gray-700 p-6 rounded-lg shadow-lg card-effect animated-skill-card animate-on-scroll"
+                            class="skill-card bg-gray-100 dark:bg-gray-700 p-6 rounded-lg shadow-lg card-effect animated-skill-card animate-on-scroll"
                             style="--delay: 1.9s"
                             data-type="tool"
                             data-title="Anaconda"
@@ -888,7 +900,7 @@
                             <i
                                 class="fas fa-box text-6xl text-green-500 mb-4 skill-icon"
                             ></i>
-                            <h3 class="text-xl font-semibold text-gray-100">
+                            <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">
                                 Anaconda
                             </h3>
                         </div>
@@ -899,16 +911,16 @@
             <!-- Projects Section -->
             <section
                 id="projects"
-                class="relative container mx-auto px-6 py-16 rounded-lg shadow-xl bg-gray-800 my-16 overflow-hidden animate-on-scroll float-always"
+                class="relative container mx-auto px-6 py-16 rounded-lg shadow-xl bg-white dark:bg-gray-800 my-16 overflow-hidden animate-on-scroll float-always"
             >
                 <h2
-                    class="text-4xl font-bold text-center text-indigo-400 mb-12"
+                    class="text-4xl font-bold text-center text-indigo-600 dark:text-indigo-400 mb-12"
                 >
                     My Projects
                 </h2>
                 <div class="mb-12">
                     <h3
-                        class="text-3xl font-bold text-center text-gray-200 mb-8"
+                        class="text-3xl font-bold text-center text-gray-800 dark:text-gray-200 mb-8"
                     >
                         Major Projects
                     </h3>
@@ -917,7 +929,7 @@
                     >
                         <!-- Project 1 -->
                         <div
-                            class="project-card bg-gray-700 rounded-lg shadow-lg overflow-hidden card-effect group float-always animate-on-scroll"
+                            class="project-card bg-gray-100 dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden card-effect group float-always animate-on-scroll"
                             data-type="project"
                             data-title="Semi-Humanoid Robot (RIGGU)"
                             data-brief-description="A modular autonomous robot integrating voice commands, SLAM, and joystick control for differential drive navigation."
@@ -938,48 +950,48 @@ Integrated 2D SLAM (RPLiDAR + Nav2) and real-time voice-command interaction usin
                                 <div
                                     class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                                 >
-                                    <span class="text-white text-xl font-bold"
+                                    <span class="text-gray-900 dark:text-white text-xl font-bold"
                                         >View Details</span
                                     >
                                 </div>
                             </div>
                             <div class="p-6">
                                 <h3
-                                    class="text-2xl font-bold text-indigo-300 mb-3"
+                                    class="text-2xl font-bold text-indigo-700 dark:text-indigo-300 mb-3"
                                 >
                                     Semi-Humanoid Robot (RIGGU)
                                 </h3>
-                                <p class="text-gray-300 mb-4 text-sm">
+                                <p class="text-gray-700 dark:text-gray-300 mb-4 text-sm">
                                     A modular autonomous robot integrating voice
                                     commands, SLAM, and joystick control for
                                     differential drive navigation.
                                 </p>
                                 <div class="flex flex-wrap gap-2 text-sm mb-4">
                                     <span
-                                        class="bg-gray-600 text-gray-300 px-3 py-1 rounded-full"
+                                        class="bg-gray-200 dark:bg-gray-600 text-gray-700 dark:text-gray-300 px-3 py-1 rounded-full"
                                         >Python</span
                                     >
                                     <span
-                                        class="bg-gray-600 text-gray-300 px-3 py-1 rounded-full"
+                                        class="bg-gray-200 dark:bg-gray-600 text-gray-700 dark:text-gray-300 px-3 py-1 rounded-full"
                                         >ROS2 (Humble)</span
                                     >
                                     <span
-                                        class="bg-gray-600 text-gray-300 px-3 py-1 rounded-full"
+                                        class="bg-gray-200 dark:bg-gray-600 text-gray-700 dark:text-gray-300 px-3 py-1 rounded-full"
                                         >ESP32 (micro-ROS)</span
                                     >
                                     <span
-                                        class="bg-gray-600 text-gray-300 px-3 py-1 rounded-full"
+                                        class="bg-gray-200 dark:bg-gray-600 text-gray-700 dark:text-gray-300 px-3 py-1 rounded-full"
                                         >Linux</span
                                     >
                                     <span
-                                        class="bg-gray-600 text-gray-300 px-3 py-1 rounded-full"
+                                        class="bg-gray-200 dark:bg-gray-600 text-gray-700 dark:text-gray-300 px-3 py-1 rounded-full"
                                         >PyQt5</span
                                     >
                                 </div>
                                 <div class="flex justify-between items-center">
                                     <a
                                         href="https://github.com/saitejaswi06/RIGGU-control-interface"
-                                        class="btn-primary text-gray-400 hover:text-gray-300"
+                                        class="btn-primary text-gray-600 dark:text-gray-400 hover:text-gray-700 dark:text-gray-300"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                     >
@@ -992,7 +1004,7 @@ Integrated 2D SLAM (RPLiDAR + Nav2) and real-time voice-command interaction usin
 
                         <!-- Project 2 -->
                         <div
-                            class="project-card bg-gray-700 rounded-lg shadow-lg overflow-hidden card-effect group float-always animate-on-scroll"
+                            class="project-card bg-gray-100 dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden card-effect group float-always animate-on-scroll"
                             data-type="project"
                             data-title="Face Recognition-Based Attendance System"
                             data-brief-description="A Raspberry Pi-based real-time face recognition system for automated attendance logging and database management."
@@ -1011,52 +1023,52 @@ Integrated 2D SLAM (RPLiDAR + Nav2) and real-time voice-command interaction usin
                                 <div
                                     class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                                 >
-                                    <span class="text-white text-xl font-bold"
+                                    <span class="text-gray-900 dark:text-white text-xl font-bold"
                                         >View Details</span
                                     >
                                 </div>
                             </div>
                             <div class="p-6">
                                 <h3
-                                    class="text-2xl font-bold text-indigo-300 mb-3"
+                                    class="text-2xl font-bold text-indigo-700 dark:text-indigo-300 mb-3"
                                 >
                                     Face Recognition-Based Attendance System
                                 </h3>
-                                <p class="text-gray-300 mb-4 text-sm">
+                                <p class="text-gray-700 dark:text-gray-300 mb-4 text-sm">
                                     A Raspberry Pi-based real-time face
                                     recognition system for automated attendance
                                     logging and database management.
                                 </p>
                                 <div class="flex flex-wrap gap-2 text-sm mb-4">
                                     <span
-                                        class="bg-gray-600 text-gray-300 px-3 py-1 rounded-full"
+                                        class="bg-gray-200 dark:bg-gray-600 text-gray-700 dark:text-gray-300 px-3 py-1 rounded-full"
                                         >Python</span
                                     >
                                     <span
-                                        class="bg-gray-600 text-gray-300 px-3 py-1 rounded-full"
+                                        class="bg-gray-200 dark:bg-gray-600 text-gray-700 dark:text-gray-300 px-3 py-1 rounded-full"
                                         >OpenCV</span
                                     >
                                     <span
-                                        class="bg-gray-600 text-gray-300 px-3 py-1 rounded-full"
+                                        class="bg-gray-200 dark:bg-gray-600 text-gray-700 dark:text-gray-300 px-3 py-1 rounded-full"
                                         >PyQt6</span
                                     >
                                     <span
-                                        class="bg-gray-600 text-gray-300 px-3 py-1 rounded-full"
+                                        class="bg-gray-200 dark:bg-gray-600 text-gray-700 dark:text-gray-300 px-3 py-1 rounded-full"
                                         >SQL</span
                                     >
                                     <span
-                                        class="bg-gray-600 text-gray-300 px-3 py-1 rounded-full"
+                                        class="bg-gray-200 dark:bg-gray-600 text-gray-700 dark:text-gray-300 px-3 py-1 rounded-full"
                                         >YOLOv8</span
                                     >
                                     <span
-                                        class="bg-gray-600 text-gray-300 px-3 py-1 rounded-full"
+                                        class="bg-gray-200 dark:bg-gray-600 text-gray-700 dark:text-gray-300 px-3 py-1 rounded-full"
                                         >Raspberry Pi</span
                                     >
                                 </div>
                                 <div class="flex justify-between items-center">
                                     <a
                                         href="https://github.com/saitejaswi06/Attendance-Management-System"
-                                        class="btn-primary text-gray-400 hover:text-gray-300"
+                                        class="btn-primary text-gray-600 dark:text-gray-400 hover:text-gray-700 dark:text-gray-300"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                     >
@@ -1069,7 +1081,7 @@ Integrated 2D SLAM (RPLiDAR + Nav2) and real-time voice-command interaction usin
 
                         <!-- Project 3 -->
                         <div
-                            class="project-card bg-gray-700 rounded-lg shadow-lg overflow-hidden card-effect group float-always animate-on-scroll"
+                            class="project-card bg-gray-100 dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden card-effect group float-always animate-on-scroll"
                             data-type="project"
                             data-title="Buck-Boost DC-DC Converter (100V → 50V/230V)"
                             data-brief-description="A high-efficiency DC-DC converter designed for regulated power supply with dynamic load handling."
@@ -1088,43 +1100,43 @@ Integrated 2D SLAM (RPLiDAR + Nav2) and real-time voice-command interaction usin
                                 <div
                                     class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                                 >
-                                    <span class="text-white text-xl font-bold"
+                                    <span class="text-gray-900 dark:text-white text-xl font-bold"
                                         >View Details</span
                                     >
                                 </div>
                             </div>
                             <div class="p-6">
                                 <h3
-                                    class="text-2xl font-bold text-indigo-300 mb-3"
+                                    class="text-2xl font-bold text-indigo-700 dark:text-indigo-300 mb-3"
                                 >
                                     <p>Buck-Boost DC-DC Converter</p>
                                     <p>(100V → 50V/230V)</p>
                                 </h3>
-                                <p class="text-gray-300 mb-4 text-sm">
+                                <p class="text-gray-700 dark:text-gray-300 mb-4 text-sm">
                                     A high-efficiency DC-DC converter designed for regulated power supply with dynamic load handling.
                                 </p>
                                 <div class="flex flex-wrap gap-2 text-sm mb-4">
                                     <span
-                                        class="bg-gray-600 text-gray-300 px-3 py-1 rounded-full"
+                                        class="bg-gray-200 dark:bg-gray-600 text-gray-700 dark:text-gray-300 px-3 py-1 rounded-full"
                                         >Power Electronics</span
                                     >
                                     <span
-                                        class="bg-gray-600 text-gray-300 px-3 py-1 rounded-full"
+                                        class="bg-gray-200 dark:bg-gray-600 text-gray-700 dark:text-gray-300 px-3 py-1 rounded-full"
                                         >MATLAB/Simulink</span
                                     >
                                     <span
-                                        class="bg-gray-600 text-gray-300 px-3 py-1 rounded-full"
+                                        class="bg-gray-200 dark:bg-gray-600 text-gray-700 dark:text-gray-300 px-3 py-1 rounded-full"
                                         >LTspice</span
                                     >
                                     <span
-                                        class="bg-gray-600 text-gray-300 px-3 py-1 rounded-full"
+                                        class="bg-gray-200 dark:bg-gray-600 text-gray-700 dark:text-gray-300 px-3 py-1 rounded-full"
                                         >PCB Design</span
                                     >
                                 </div>
                                 <div class="flex justify-between items-center">
                                     <a
                                         href="https://github.com/saitejaswi06/Buck-Boost-Converter"
-                                        class="btn-primary text-gray-400 hover:text-gray-300"
+                                        class="btn-primary text-gray-600 dark:text-gray-400 hover:text-gray-700 dark:text-gray-300"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                     >
@@ -1137,7 +1149,7 @@ Integrated 2D SLAM (RPLiDAR + Nav2) and real-time voice-command interaction usin
 
                         <!-- Project 4 -->
                         <div
-                            class="project-card bg-gray-700 rounded-lg shadow-lg overflow-hidden card-effect group float-always animate-on-scroll"
+                            class="project-card bg-gray-100 dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden card-effect group float-always animate-on-scroll"
                             data-type="project"
                             data-title="Vending Machine FSM"
                             data-brief-description="A Verilog-based finite state machine handling multi-coin, multi-product vending operations with exact change dispensing."
@@ -1156,39 +1168,39 @@ Integrated 2D SLAM (RPLiDAR + Nav2) and real-time voice-command interaction usin
                                 <div
                                     class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                                 >
-                                    <span class="text-white text-xl font-bold"
+                                    <span class="text-gray-900 dark:text-white text-xl font-bold"
                                         >View Details</span
                                     >
                                 </div>
                             </div>
                             <div class="p-6">
                                 <h3
-                                    class="text-2xl font-bold text-indigo-300 mb-3"
+                                    class="text-2xl font-bold text-indigo-700 dark:text-indigo-300 mb-3"
                                 >
                                     Vending Machine
                                 </h3>
-                                <p class="text-gray-300 mb-4 text-sm">
+                                <p class="text-gray-700 dark:text-gray-300 mb-4 text-sm">
                                     A Verilog-based finite state machine handling multi-coin, multi-product vending operations with exact change dispensing.
 
                                 </p>
                                 <div class="flex flex-wrap gap-2 text-sm mb-4">
                                     <span
-                                        class="bg-gray-600 text-gray-300 px-3 py-1 rounded-full"
+                                        class="bg-gray-200 dark:bg-gray-600 text-gray-700 dark:text-gray-300 px-3 py-1 rounded-full"
                                         >Verilog HDL</span
                                     >
                                     <span
-                                        class="bg-gray-600 text-gray-300 px-3 py-1 rounded-full"
+                                        class="bg-gray-200 dark:bg-gray-600 text-gray-700 dark:text-gray-300 px-3 py-1 rounded-full"
                                         >Vivado</span
                                     >
                                     <span
-                                        class="bg-gray-600 text-gray-300 px-3 py-1 rounded-full"
+                                        class="bg-gray-200 dark:bg-gray-600 text-gray-700 dark:text-gray-300 px-3 py-1 rounded-full"
                                         >Finite State Machine Design</span
                                     >
                                 </div>
                                 <div class="flex justify-between items-center">
                                     <a
                                         href="https://github.com/saitejaswi06/Vending-machine-using-Verilog"
-                                        class="btn-primary text-gray-400 hover:text-gray-300"
+                                        class="btn-primary text-gray-600 dark:text-gray-400 hover:text-gray-700 dark:text-gray-300"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                     >
@@ -1202,7 +1214,7 @@ Integrated 2D SLAM (RPLiDAR + Nav2) and real-time voice-command interaction usin
                 </div>
                 <div>
                     <h3
-                        class="text-3xl font-bold text-center text-gray-200 mb-8"
+                        class="text-3xl font-bold text-center text-gray-800 dark:text-gray-200 mb-8"
                     >
                         Minor Projects & Simulations
                     </h3>
@@ -1211,7 +1223,7 @@ Integrated 2D SLAM (RPLiDAR + Nav2) and real-time voice-command interaction usin
                     >
                         <!-- Project 1 -->
                         <div
-                            class="project-card bg-gray-700 rounded-lg shadow-lg overflow-hidden card-effect group float-always animate-on-scroll"
+                            class="project-card bg-gray-100 dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden card-effect group float-always animate-on-scroll"
                             data-type="project"
                             data-title="8-bit SAR ADC"
                             data-brief-description="A simulated SAR ADC achieving precise analog-to-digital conversion with low error margins."
@@ -1230,36 +1242,36 @@ Integrated 2D SLAM (RPLiDAR + Nav2) and real-time voice-command interaction usin
                                 <div
                                     class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                                 >
-                                    <span class="text-white text-xl font-bold"
+                                    <span class="text-gray-900 dark:text-white text-xl font-bold"
                                         >View Details</span
                                     >
                                 </div>
                             </div>
                             <div class="p-6">
                                 <h3
-                                    class="text-2xl font-bold text-indigo-300 mb-3"
+                                    class="text-2xl font-bold text-indigo-700 dark:text-indigo-300 mb-3"
                                 >
                                     8-bit SAR ADC
                                 </h3>
-                                <p class="text-gray-300 mb-4 text-sm">
+                                <p class="text-gray-700 dark:text-gray-300 mb-4 text-sm">
                                     A simulated SAR ADC achieving precise
                                     analog-to-digital conversion with low error
                                     margins.
                                 </p>
                                 <div class="flex flex-wrap gap-2 text-sm mb-4">
                                     <span
-                                        class="bg-gray-600 text-gray-300 px-3 py-1 rounded-full"
+                                        class="bg-gray-200 dark:bg-gray-600 text-gray-700 dark:text-gray-300 px-3 py-1 rounded-full"
                                         >Digital Logic Design</span
                                     >
                                     <span
-                                        class="bg-gray-600 text-gray-300 px-3 py-1 rounded-full"
+                                        class="bg-gray-200 dark:bg-gray-600 text-gray-700 dark:text-gray-300 px-3 py-1 rounded-full"
                                         >LTspice</span
                                     >
                                 </div>
                                 <div class="flex justify-between items-center">
                                     <a
                                         href="https://github.com/saitejaswi06/8-bit-SAR-ADC"
-                                        class="btn-primary text-gray-400 hover:text-gray-300"
+                                        class="btn-primary text-gray-600 dark:text-gray-400 hover:text-gray-700 dark:text-gray-300"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                     >
@@ -1272,7 +1284,7 @@ Integrated 2D SLAM (RPLiDAR + Nav2) and real-time voice-command interaction usin
 
                         <!-- Project 2 -->
                         <div
-                            class="project-card bg-gray-700 rounded-lg shadow-lg overflow-hidden card-effect group float-always animate-on-scroll"
+                            class="project-card bg-gray-100 dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden card-effect group float-always animate-on-scroll"
                             data-type="project"
                             data-title="Op-Amp PID Controller"
                             data-brief-description="An analog PID control system for DC motor stabilization and speed regulation."
@@ -1291,35 +1303,35 @@ Integrated 2D SLAM (RPLiDAR + Nav2) and real-time voice-command interaction usin
                                 <div
                                     class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                                 >
-                                    <span class="text-white text-xl font-bold"
+                                    <span class="text-gray-900 dark:text-white text-xl font-bold"
                                         >View Details</span
                                     >
                                 </div>
                             </div>
                             <div class="p-6">
                                 <h3
-                                    class="text-2xl font-bold text-indigo-300 mb-3"
+                                    class="text-2xl font-bold text-indigo-700 dark:text-indigo-300 mb-3"
                                 >
                                     Op-Amp PID Controller
                                 </h3>
-                                <p class="text-gray-300 mb-4 text-sm">
+                                <p class="text-gray-700 dark:text-gray-300 mb-4 text-sm">
                                     An analog PID control system for DC motor
                                     stabilization and speed regulation.
                                 </p>
                                 <div class="flex flex-wrap gap-2 text-sm mb-4">
                                     <span
-                                        class="bg-gray-600 text-gray-300 px-3 py-1 rounded-full"
+                                        class="bg-gray-200 dark:bg-gray-600 text-gray-700 dark:text-gray-300 px-3 py-1 rounded-full"
                                         >Analog Circuits</span
                                     >
                                     <span
-                                        class="bg-gray-600 text-gray-300 px-3 py-1 rounded-full"
+                                        class="bg-gray-200 dark:bg-gray-600 text-gray-700 dark:text-gray-300 px-3 py-1 rounded-full"
                                         >LTspice</span
                                     >
                                 </div>
                                 <div class="flex justify-between items-center">
                                     <a
                                         href="https://github.com/saitejaswi06/PID-Controller-using-OP-AMP"
-                                        class="btn-primary text-gray-400 hover:text-gray-300"
+                                        class="btn-primary text-gray-600 dark:text-gray-400 hover:text-gray-700 dark:text-gray-300"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                     >
@@ -1332,7 +1344,7 @@ Integrated 2D SLAM (RPLiDAR + Nav2) and real-time voice-command interaction usin
 
                         <!-- Project 3 -->
                         <div
-                            class="project-card bg-gray-700 rounded-lg shadow-lg overflow-hidden card-effect group float-always animate-on-scroll"
+                            class="project-card bg-gray-100 dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden card-effect group float-always animate-on-scroll"
                             data-type="project"
                             data-title="Function Generator Using Op-Amp"
                             data-brief-description="A discrete analog circuit generating various waveforms for signal testing."
@@ -1351,35 +1363,35 @@ Integrated 2D SLAM (RPLiDAR + Nav2) and real-time voice-command interaction usin
                                 <div
                                     class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                                 >
-                                    <span class="text-white text-xl font-bold"
+                                    <span class="text-gray-900 dark:text-white text-xl font-bold"
                                         >View Details</span
                                     >
                                 </div>
                             </div>
                             <div class="p-6">
                                 <h3
-                                    class="text-2xl font-bold text-indigo-300 mb-3"
+                                    class="text-2xl font-bold text-indigo-700 dark:text-indigo-300 mb-3"
                                 >
                                     Function Generator Using Op-Amp
                                 </h3>
-                                <p class="text-gray-300 mb-4 text-sm">
+                                <p class="text-gray-700 dark:text-gray-300 mb-4 text-sm">
                                     A discrete analog circuit generating various
                                     waveforms for signal testing.
                                 </p>
                                 <div class="flex flex-wrap gap-2 text-sm mb-4">
                                     <span
-                                        class="bg-gray-600 text-gray-300 px-3 py-1 rounded-full"
+                                        class="bg-gray-200 dark:bg-gray-600 text-gray-700 dark:text-gray-300 px-3 py-1 rounded-full"
                                         >Analog Design</span
                                     >
                                     <span
-                                        class="bg-gray-600 text-gray-300 px-3 py-1 rounded-full"
+                                        class="bg-gray-200 dark:bg-gray-600 text-gray-700 dark:text-gray-300 px-3 py-1 rounded-full"
                                         >LTspice</span
                                     >
                                 </div>
                                 <div class="flex justify-between items-center">
                                     <a
                                         href="https://github.com/saitejaswi06/Function-generator-using-OP-AMP"
-                                        class="btn-primary text-gray-400 hover:text-gray-300"
+                                        class="btn-primary text-gray-600 dark:text-gray-400 hover:text-gray-700 dark:text-gray-300"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                     >
@@ -1392,7 +1404,7 @@ Integrated 2D SLAM (RPLiDAR + Nav2) and real-time voice-command interaction usin
 
                         <!-- Project 4 -->
                         <div
-                            class="project-card bg-gray-700 rounded-lg shadow-lg overflow-hidden card-effect group float-always animate-on-scroll"
+                            class="project-card bg-gray-100 dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden card-effect group float-always animate-on-scroll"
                             data-type="project"
                             data-title="Adaptive LED Blinker"
                             data-brief-description="A programmable LED blinker with dynamic frequency selection via switch input."
@@ -1411,39 +1423,39 @@ Integrated 2D SLAM (RPLiDAR + Nav2) and real-time voice-command interaction usin
                                 <div
                                     class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                                 >
-                                    <span class="text-white text-xl font-bold"
+                                    <span class="text-gray-900 dark:text-white text-xl font-bold"
                                         >View Details</span
                                     >
                                 </div>
                             </div>
                             <div class="p-6">
                                 <h3
-                                    class="text-2xl font-bold text-indigo-300 mb-3"
+                                    class="text-2xl font-bold text-indigo-700 dark:text-indigo-300 mb-3"
                                 >
                                     Adaptive LED Blinker
                                 </h3>
-                                <p class="text-gray-300 mb-4 text-sm">
+                                <p class="text-gray-700 dark:text-gray-300 mb-4 text-sm">
                                     A programmable LED blinker with dynamic
                                     frequency selection via switch input.
                                 </p>
                                 <div class="flex flex-wrap gap-2 text-sm mb-4">
                                     <span
-                                        class="bg-gray-600 text-gray-300 px-3 py-1 rounded-full"
+                                        class="bg-gray-200 dark:bg-gray-600 text-gray-700 dark:text-gray-300 px-3 py-1 rounded-full"
                                         >Embedded C</span
                                     >
                                     <span
-                                        class="bg-gray-600 text-gray-300 px-3 py-1 rounded-full"
+                                        class="bg-gray-200 dark:bg-gray-600 text-gray-700 dark:text-gray-300 px-3 py-1 rounded-full"
                                         >PIC18F452</span
                                     >
                                     <span
-                                        class="bg-gray-600 text-gray-300 px-3 py-1 rounded-full"
+                                        class="bg-gray-200 dark:bg-gray-600 text-gray-700 dark:text-gray-300 px-3 py-1 rounded-full"
                                         >Interrupt-Driven Control</span
                                     >
                                 </div>
                                 <div class="flex justify-between items-center">
                                     <a
                                         href="https://github.com/saitejaswi06/Frequency-Scalable-LED-Blinker"
-                                        class="btn-primary text-gray-400 hover:text-gray-300"
+                                        class="btn-primary text-gray-600 dark:text-gray-400 hover:text-gray-700 dark:text-gray-300"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                     >
@@ -1455,7 +1467,7 @@ Integrated 2D SLAM (RPLiDAR + Nav2) and real-time voice-command interaction usin
                         </div>
                         <!-- Project 5 -->
                         <div
-                            class="project-card bg-gray-700 rounded-lg shadow-lg overflow-hidden card-effect group float-always animate-on-scroll"
+                            class="project-card bg-gray-100 dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden card-effect group float-always animate-on-scroll"
                             data-type="project"
                             data-title="2-Stage CMOS Op-Amp"
                             data-brief-description="A Miller-compensated CMOS amplifier designed for high-gain analog signal applications."
@@ -1474,35 +1486,35 @@ Integrated 2D SLAM (RPLiDAR + Nav2) and real-time voice-command interaction usin
                                 <div
                                     class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                                 >
-                                    <span class="text-white text-xl font-bold"
+                                    <span class="text-gray-900 dark:text-white text-xl font-bold"
                                         >View Details</span
                                     >
                                 </div>
                             </div>
                             <div class="p-6">
                                 <h3
-                                    class="text-2xl font-bold text-indigo-300 mb-3"
+                                    class="text-2xl font-bold text-indigo-700 dark:text-indigo-300 mb-3"
                                 >
                                     2-Stage CMOS Op-Amp
                                 </h3>
-                                <p class="text-gray-300 mb-4 text-sm">
+                                <p class="text-gray-700 dark:text-gray-300 mb-4 text-sm">
                                     A Miller-compensated CMOS amplifier designed
                                     for high-gain analog signal applications.
                                 </p>
                                 <div class="flex flex-wrap gap-2 text-sm mb-4">
                                     <span
-                                        class="bg-gray-600 text-gray-300 px-3 py-1 rounded-full"
+                                        class="bg-gray-200 dark:bg-gray-600 text-gray-700 dark:text-gray-300 px-3 py-1 rounded-full"
                                         >CMOS Analog Design</span
                                     >
                                     <span
-                                        class="bg-gray-600 text-gray-300 px-3 py-1 rounded-full"
+                                        class="bg-gray-200 dark:bg-gray-600 text-gray-700 dark:text-gray-300 px-3 py-1 rounded-full"
                                         >LTspice</span
                                     >
                                 </div>
                                 <div class="flex justify-between items-center">
                                     <a
                                         href="https://github.com/saitejaswi06/2-Stage-CMOS-Op-Amp"
-                                        class="btn-primary text-gray-400 hover:text-gray-300"
+                                        class="btn-primary text-gray-600 dark:text-gray-400 hover:text-gray-700 dark:text-gray-300"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                     >
@@ -1515,7 +1527,7 @@ Integrated 2D SLAM (RPLiDAR + Nav2) and real-time voice-command interaction usin
 
                         <!-- Project 6 -->
                         <div
-                            class="project-card bg-gray-700 rounded-lg shadow-lg overflow-hidden card-effect group float-always animate-on-scroll"
+                            class="project-card bg-gray-100 dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden card-effect group float-always animate-on-scroll"
                             data-type="project"
                             data-title="Traffic Light FSM"
                             data-brief-description="A digital traffic controller implementing asynchronous emergency overrides and timed light switching."
@@ -1534,36 +1546,36 @@ Integrated 2D SLAM (RPLiDAR + Nav2) and real-time voice-command interaction usin
                                 <div
                                     class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                                 >
-                                    <span class="text-white text-xl font-bold"
+                                    <span class="text-gray-900 dark:text-white text-xl font-bold"
                                         >View Details</span
                                     >
                                 </div>
                             </div>
                             <div class="p-6">
                                 <h3
-                                    class="text-2xl font-bold text-indigo-300 mb-3"
+                                    class="text-2xl font-bold text-indigo-700 dark:text-indigo-300 mb-3"
                                 >
                                     Traffic Light FSM
                                 </h3>
-                                <p class="text-gray-300 mb-4 text-sm">
+                                <p class="text-gray-700 dark:text-gray-300 mb-4 text-sm">
                                     A digital traffic controller implementing
                                     asynchronous emergency overrides and timed
                                     light switching.
                                 </p>
                                 <div class="flex flex-wrap gap-2 text-sm mb-4">
                                     <span
-                                        class="bg-gray-600 text-gray-300 px-3 py-1 rounded-full"
+                                        class="bg-gray-200 dark:bg-gray-600 text-gray-700 dark:text-gray-300 px-3 py-1 rounded-full"
                                         >Verilog HDL</span
                                     >
                                     <span
-                                        class="bg-gray-600 text-gray-300 px-3 py-1 rounded-full"
+                                        class="bg-gray-200 dark:bg-gray-600 text-gray-700 dark:text-gray-300 px-3 py-1 rounded-full"
                                         >Vivado Simulation</span
                                     >
                                 </div>
                                 <div class="flex justify-between items-center">
                                     <a
                                         href="https://github.com/saitejaswi06/Traffic-light-controller-FSM"
-                                        class="btn-primary text-gray-400 hover:text-gray-300"
+                                        class="btn-primary text-gray-600 dark:text-gray-400 hover:text-gray-700 dark:text-gray-300"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                     >
@@ -1576,7 +1588,7 @@ Integrated 2D SLAM (RPLiDAR + Nav2) and real-time voice-command interaction usin
 
                         <!-- Project 7 -->
                         <div
-                            class="project-card bg-gray-700 rounded-lg shadow-lg overflow-hidden card-effect group float-always animate-on-scroll"
+                            class="project-card bg-gray-100 dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden card-effect group float-always animate-on-scroll"
                             data-type="project"
                             data-title="Line Following Bot"
                             data-brief-description="A microcontroller-based robot optimized for precise line tracking across complex paths."
@@ -1595,39 +1607,39 @@ Integrated 2D SLAM (RPLiDAR + Nav2) and real-time voice-command interaction usin
                                 <div
                                     class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                                 >
-                                    <span class="text-white text-xl font-bold"
+                                    <span class="text-gray-900 dark:text-white text-xl font-bold"
                                         >View Details</span
                                     >
                                 </div>
                             </div>
                             <div class="p-6">
                                 <h3
-                                    class="text-2xl font-bold text-indigo-300 mb-3"
+                                    class="text-2xl font-bold text-indigo-700 dark:text-indigo-300 mb-3"
                                 >
                                     Line Following Bot
                                 </h3>
-                                <p class="text-gray-300 mb-4 text-sm">
+                                <p class="text-gray-700 dark:text-gray-300 mb-4 text-sm">
                                     A microcontroller-based robot optimized for
                                     precise line tracking across complex paths.
                                 </p>
                                 <div class="flex flex-wrap gap-2 text-sm mb-4">
                                     <span
-                                        class="bg-gray-600 text-gray-300 px-3 py-1 rounded-full"
+                                        class="bg-gray-200 dark:bg-gray-600 text-gray-700 dark:text-gray-300 px-3 py-1 rounded-full"
                                         >IR Reflective Sensors</span
                                     >
                                     <span
-                                        class="bg-gray-600 text-gray-300 px-3 py-1 rounded-full"
+                                        class="bg-gray-200 dark:bg-gray-600 text-gray-700 dark:text-gray-300 px-3 py-1 rounded-full"
                                         >Arduino UNO</span
                                     >
                                     <span
-                                        class="bg-gray-600 text-gray-300 px-3 py-1 rounded-full"
+                                        class="bg-gray-200 dark:bg-gray-600 text-gray-700 dark:text-gray-300 px-3 py-1 rounded-full"
                                         >C++</span
                                     >
                                 </div>
                                 <div class="flex justify-between items-center">
                                     <a
                                         href="https://github.com/saitejaswi06/Line-follower"
-                                        class="btn-primary text-gray-400 hover:text-gray-300"
+                                        class="btn-primary text-gray-600 dark:text-gray-400 hover:text-gray-700 dark:text-gray-300"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                     >
@@ -1640,7 +1652,7 @@ Integrated 2D SLAM (RPLiDAR + Nav2) and real-time voice-command interaction usin
 
                         <!-- Project 8 -->
                         <div
-                            class="project-card bg-gray-700 rounded-lg shadow-lg overflow-hidden card-effect group float-always animate-on-scroll"
+                            class="project-card bg-gray-100 dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden card-effect group float-always animate-on-scroll"
                             data-type="project"
                             data-title="Maze Solver Bot"
                             data-brief-description="An autonomous robot designed to solve mazes using distance sensing and rule-based logic."
@@ -1659,43 +1671,43 @@ Integrated 2D SLAM (RPLiDAR + Nav2) and real-time voice-command interaction usin
                                 <div
                                     class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                                 >
-                                    <span class="text-white text-xl font-bold"
+                                    <span class="text-gray-900 dark:text-white text-xl font-bold"
                                         >View Details</span
                                     >
                                 </div>
                             </div>
                             <div class="p-6">
                                 <h3
-                                    class="text-2xl font-bold text-indigo-300 mb-3"
+                                    class="text-2xl font-bold text-indigo-700 dark:text-indigo-300 mb-3"
                                 >
                                     Maze Solver Bot
                                 </h3>
-                                <p class="text-gray-300 mb-4 text-sm">
+                                <p class="text-gray-700 dark:text-gray-300 mb-4 text-sm">
                                     An autonomous robot designed to solve mazes
                                     using distance sensing and rule-based logic.
                                 </p>
                                 <div class="flex flex-wrap gap-2 text-sm mb-4">
                                     <span
-                                        class="bg-gray-600 text-gray-300 px-3 py-1 rounded-full"
+                                        class="bg-gray-200 dark:bg-gray-600 text-gray-700 dark:text-gray-300 px-3 py-1 rounded-full"
                                         >C++</span
                                     >
                                     <span
-                                        class="bg-gray-600 text-gray-300 px-3 py-1 rounded-full"
+                                        class="bg-gray-200 dark:bg-gray-600 text-gray-700 dark:text-gray-300 px-3 py-1 rounded-full"
                                         >Ultrasonic Sensors</span
                                     >
                                     <span
-                                        class="bg-gray-600 text-gray-300 px-3 py-1 rounded-full"
+                                        class="bg-gray-200 dark:bg-gray-600 text-gray-700 dark:text-gray-300 px-3 py-1 rounded-full"
                                         >Motor Drivers</span
                                     >
                                     <span
-                                        class="bg-gray-600 text-gray-300 px-3 py-1 rounded-full"
+                                        class="bg-gray-200 dark:bg-gray-600 text-gray-700 dark:text-gray-300 px-3 py-1 rounded-full"
                                         >Arduino UNO</span
                                     >
                                 </div>
                                 <div class="flex justify-between items-center">
                                     <a
                                         href="https://github.com/saitejaswi06/Maze-Solver"
-                                        class="btn-primary text-gray-400 hover:text-gray-300"
+                                        class="btn-primary text-gray-600 dark:text-gray-400 hover:text-gray-700 dark:text-gray-300"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                     >
@@ -1712,25 +1724,25 @@ Integrated 2D SLAM (RPLiDAR + Nav2) and real-time voice-command interaction usin
             <!-- Certifications Section -->
             <section
                 id="certifications"
-                class="relative container mx-auto px-6 py-16 rounded-lg shadow-xl bg-gray-800 my-16 overflow-hidden animate-on-scroll float-always"
+                class="relative container mx-auto px-6 py-16 rounded-lg shadow-xl bg-white dark:bg-gray-800 my-16 overflow-hidden animate-on-scroll float-always"
             >
                 <h2
-                    class="text-4xl font-bold text-center text-indigo-400 mb-12"
+                    class="text-4xl font-bold text-center text-indigo-600 dark:text-indigo-400 mb-12"
                 >
                     Certifications & Technical Courses
                 </h2>
                 <div
-                    class="relative z-10 text-lg text-gray-300 leading-relaxed"
+                    class="relative z-10 text-lg text-gray-700 dark:text-gray-300 leading-relaxed"
                 >
                     <ul class="grid grid-cols-1 md:grid-cols-2 gap-6 list-none">
                         <li
-                            class="bg-gray-700 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
+                            class="bg-gray-100 dark:bg-gray-700 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
                         >
                             <div
                                 class="flex flex-col md:flex-row md:items-center justify-between mb-2"
                             >
                                 <strong
-                                    class="text-indigo-300 text-xl md:text-2xl font-semibold"
+                                    class="text-indigo-700 dark:text-indigo-300 text-xl md:text-2xl font-semibold"
                                 >
                                     <a
                                         href="https://drive.google.com/file/d/1EcmUqHhLxE2fGrXxC5KwioDdhsJybZJE/view?usp=drive_link"
@@ -1741,11 +1753,11 @@ Integrated 2D SLAM (RPLiDAR + Nav2) and real-time voice-command interaction usin
                                     >
                                 </strong>
                                 <span
-                                    class="text-gray-400 italic text-sm md:text-base mt-1 md:mt-0"
+                                    class="text-gray-600 dark:text-gray-400 italic text-sm md:text-base mt-1 md:mt-0"
                                     >Issued by be10x</span
                                 >
                             </div>
-                            <p class="text-gray-300 text-base">
+                            <p class="text-gray-700 dark:text-gray-300 text-base">
                                 Explored AI-driven productivity platforms and
                                 foundational machine learning toolchains for
                                 practical automation.
@@ -1753,13 +1765,13 @@ Integrated 2D SLAM (RPLiDAR + Nav2) and real-time voice-command interaction usin
                         </li>
 
                         <li
-                            class="bg-gray-700 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
+                            class="bg-gray-100 dark:bg-gray-700 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
                         >
                             <div
                                 class="flex flex-col md:flex-row md:items-center justify-between mb-2"
                             >
                                 <strong
-                                    class="text-indigo-300 text-xl md:text-2xl font-semibold"
+                                    class="text-indigo-700 dark:text-indigo-300 text-xl md:text-2xl font-semibold"
                                 >
                                     <a
                                         href="https://drive.google.com/file/d/1_RhBfO1BNaUCX6HoUrShQphvZPtzGLFe/view?usp=drive_link"
@@ -1770,11 +1782,11 @@ Integrated 2D SLAM (RPLiDAR + Nav2) and real-time voice-command interaction usin
                                     >
                                 </strong>
                                 <span
-                                    class="text-gray-400 italic text-sm md:text-base mt-1 md:mt-0"
+                                    class="text-gray-600 dark:text-gray-400 italic text-sm md:text-base mt-1 md:mt-0"
                                     >Issued by Udemy</span
                                 >
                             </div>
-                            <p class="text-gray-300 text-base">
+                            <p class="text-gray-700 dark:text-gray-300 text-base">
                                 Built strong fundamentals in procedural
                                 programming, data structures, and low-level
                                 algorithmic implementation.
@@ -1782,13 +1794,13 @@ Integrated 2D SLAM (RPLiDAR + Nav2) and real-time voice-command interaction usin
                         </li>
 
                         <li
-                            class="bg-gray-700 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
+                            class="bg-gray-100 dark:bg-gray-700 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
                         >
                             <div
                                 class="flex flex-col md:flex-row md:items-center justify-between mb-2"
                             >
                                 <strong
-                                    class="text-indigo-300 text-xl md:text-2xl font-semibold"
+                                    class="text-indigo-700 dark:text-indigo-300 text-xl md:text-2xl font-semibold"
                                 >
                                     <a
                                         href="https://drive.google.com/file/d/13BnaLbulwrTm1MlZY-PZSu0Fok8_8J3y/view?usp=drive_link"
@@ -1799,11 +1811,11 @@ Integrated 2D SLAM (RPLiDAR + Nav2) and real-time voice-command interaction usin
                                     >
                                 </strong>
                                 <span
-                                    class="text-gray-400 italic text-sm md:text-base mt-1 md:mt-0"
+                                    class="text-gray-600 dark:text-gray-400 italic text-sm md:text-base mt-1 md:mt-0"
                                     >Issued by MathWorks</span
                                 >
                             </div>
-                            <p class="text-gray-300 text-base">
+                            <p class="text-gray-700 dark:text-gray-300 text-base">
                                 Modeled and simulated analog/digital circuits
                                 using Simulink and MATLAB, analyzing transient
                                 and steady-state responses.
@@ -1811,13 +1823,13 @@ Integrated 2D SLAM (RPLiDAR + Nav2) and real-time voice-command interaction usin
                         </li>
 
                         <li
-                            class="bg-gray-700 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
+                            class="bg-gray-100 dark:bg-gray-700 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
                         >
                             <div
                                 class="flex flex-col md:flex-row md:items-center justify-between mb-2"
                             >
                                 <strong
-                                    class="text-indigo-300 text-xl md:text-2xl font-semibold"
+                                    class="text-indigo-700 dark:text-indigo-300 text-xl md:text-2xl font-semibold"
                                 >
                                     <a
                                         href="https://drive.google.com/file/d/1yK7WlBMwMhc_2XzovVwyqPy2q_0gjoG5/view?usp=drive_link"
@@ -1828,11 +1840,11 @@ Integrated 2D SLAM (RPLiDAR + Nav2) and real-time voice-command interaction usin
                                     >
                                 </strong>
                                 <span
-                                    class="text-gray-400 italic text-sm md:text-base mt-1 md:mt-0"
+                                    class="text-gray-600 dark:text-gray-400 italic text-sm md:text-base mt-1 md:mt-0"
                                     >Issued by MathWorks</span
                                 >
                             </div>
-                            <p class="text-gray-300 text-base">
+                            <p class="text-gray-700 dark:text-gray-300 text-base">
                                 Designed closed-loop control systems with PID
                                 tuning and dynamic response analysis in MATLAB
                                 Control System Toolbox.
@@ -1840,13 +1852,13 @@ Integrated 2D SLAM (RPLiDAR + Nav2) and real-time voice-command interaction usin
                         </li>
 
                         <li
-                            class="bg-gray-700 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
+                            class="bg-gray-100 dark:bg-gray-700 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
                         >
                             <div
                                 class="flex flex-col md:flex-row md:items-center justify-between mb-2"
                             >
                                 <strong
-                                    class="text-indigo-300 text-xl md:text-2xl font-semibold"
+                                    class="text-indigo-700 dark:text-indigo-300 text-xl md:text-2xl font-semibold"
                                 >
                                     <a
                                         href="https://drive.google.com/file/d/1a7eoosdKRbbqr7IcQkyDlKB2hejC1wZ0/view?usp=drive_link"
@@ -1858,11 +1870,11 @@ Integrated 2D SLAM (RPLiDAR + Nav2) and real-time voice-command interaction usin
                                     >
                                 </strong>
                                 <span
-                                    class="text-gray-400 italic text-sm md:text-base mt-1 md:mt-0"
+                                    class="text-gray-600 dark:text-gray-400 italic text-sm md:text-base mt-1 md:mt-0"
                                     >Issued by HarvardX</span
                                 >
                             </div>
-                            <p class="text-gray-300 text-base">
+                            <p class="text-gray-700 dark:text-gray-300 text-base">
                                 Gained hands-on exposure to problem-solving,
                                 algorithmic thinking, and foundational CS
                                 concepts.
@@ -1870,13 +1882,13 @@ Integrated 2D SLAM (RPLiDAR + Nav2) and real-time voice-command interaction usin
                         </li>
 
                         <li
-                            class="bg-gray-700 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
+                            class="bg-gray-100 dark:bg-gray-700 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
                         >
                             <div
                                 class="flex flex-col md:flex-row md:items-center justify-between mb-2"
                             >
                                 <strong
-                                    class="text-indigo-300 text-xl md:text-2xl font-semibold"
+                                    class="text-indigo-700 dark:text-indigo-300 text-xl md:text-2xl font-semibold"
                                 >
                                     <a
                                         href="https://drive.google.com/file/d/1kNCwX3LohUbuKILwTqs8it0NWiB2JhcW/view?usp=drive_link"
@@ -1887,11 +1899,11 @@ Integrated 2D SLAM (RPLiDAR + Nav2) and real-time voice-command interaction usin
                                     >
                                 </strong>
                                 <span
-                                    class="text-gray-400 italic text-sm md:text-base mt-1 md:mt-0"
+                                    class="text-gray-600 dark:text-gray-400 italic text-sm md:text-base mt-1 md:mt-0"
                                     >Issued by NIELIT Calicut</span
                                 >
                             </div>
-                            <p class="text-gray-300 text-base">
+                            <p class="text-gray-700 dark:text-gray-300 text-base">
                                 Implemented microcontroller-based systems with
                                 peripheral interfacing and real-time embedded
                                 applications.
@@ -1899,13 +1911,13 @@ Integrated 2D SLAM (RPLiDAR + Nav2) and real-time voice-command interaction usin
                         </li>
 
                         <li
-                            class="bg-gray-700 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
+                            class="bg-gray-100 dark:bg-gray-700 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
                         >
                             <div
                                 class="flex flex-col md:flex-row md:items-center justify-between mb-2"
                             >
                                 <strong
-                                    class="text-indigo-300 text-xl md:text-2xl font-semibold"
+                                    class="text-indigo-700 dark:text-indigo-300 text-xl md:text-2xl font-semibold"
                                 >
                                     <a
                                         href="https://drive.google.com/file/d/1sN7ybChqAdaTVLWP7i2GPjtNVqUu4Tq3/view?usp=drive_link"
@@ -1916,11 +1928,11 @@ Integrated 2D SLAM (RPLiDAR + Nav2) and real-time voice-command interaction usin
                                     >
                                 </strong>
                                 <span
-                                    class="text-gray-400 italic text-sm md:text-base mt-1 md:mt-0"
+                                    class="text-gray-600 dark:text-gray-400 italic text-sm md:text-base mt-1 md:mt-0"
                                     >Issued by MathWorks</span
                                 >
                             </div>
-                            <p class="text-gray-300 text-base">
+                            <p class="text-gray-700 dark:text-gray-300 text-base">
                                 Practiced mathematical modeling, matrix
                                 computations, and data visualization for
                                 engineering problem-solving.
@@ -1928,13 +1940,13 @@ Integrated 2D SLAM (RPLiDAR + Nav2) and real-time voice-command interaction usin
                         </li>
 
                         <li
-                            class="bg-gray-700 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
+                            class="bg-gray-100 dark:bg-gray-700 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
                         >
                             <div
                                 class="flex flex-col md:flex-row md:items-center justify-between mb-2"
                             >
                                 <strong
-                                    class="text-indigo-300 text-xl md:text-2xl font-semibold"
+                                    class="text-indigo-700 dark:text-indigo-300 text-xl md:text-2xl font-semibold"
                                 >
                                     <a
                                         href="https://drive.google.com/file/d/112aJVL-jNMuLoZxH4u6yYEslX2HhJIY_/view?usp=drive_link"
@@ -1945,11 +1957,11 @@ Integrated 2D SLAM (RPLiDAR + Nav2) and real-time voice-command interaction usin
                                     >
                                 </strong>
                                 <span
-                                    class="text-gray-400 italic text-sm md:text-base mt-1 md:mt-0"
+                                    class="text-gray-600 dark:text-gray-400 italic text-sm md:text-base mt-1 md:mt-0"
                                     >Issued by NIELIT Calicut</span
                                 >
                             </div>
-                            <p class="text-gray-300 text-base">
+                            <p class="text-gray-700 dark:text-gray-300 text-base">
                                 Programmed embedded devices with MicroPython,
                                 enabling sensor interfacing and basic IoT
                                 functionality.
@@ -1957,13 +1969,13 @@ Integrated 2D SLAM (RPLiDAR + Nav2) and real-time voice-command interaction usin
                         </li>
 
                         <li
-                            class="bg-gray-700 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
+                            class="bg-gray-100 dark:bg-gray-700 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
                         >
                             <div
                                 class="flex flex-col md:flex-row md:items-center justify-between mb-2"
                             >
                                 <strong
-                                    class="text-indigo-300 text-xl md:text-2xl font-semibold"
+                                    class="text-indigo-700 dark:text-indigo-300 text-xl md:text-2xl font-semibold"
                                 >
                                     <a
                                         href="https://drive.google.com/file/d/1WT2LjyKs_mZSfVu7PEYjfTtSfdPOefKm/view?usp=drive_link"
@@ -1974,11 +1986,11 @@ Integrated 2D SLAM (RPLiDAR + Nav2) and real-time voice-command interaction usin
                                     >
                                 </strong>
                                 <span
-                                    class="text-gray-400 italic text-sm md:text-base mt-1 md:mt-0"
+                                    class="text-gray-600 dark:text-gray-400 italic text-sm md:text-base mt-1 md:mt-0"
                                     >Issued by MathWorks</span
                                 >
                             </div>
-                            <p class="text-gray-300 text-base">
+                            <p class="text-gray-700 dark:text-gray-300 text-base">
                                 Simulated DC-DC converters and inverter
                                 circuits, optimizing switching parameters and
                                 power flow.
@@ -1986,13 +1998,13 @@ Integrated 2D SLAM (RPLiDAR + Nav2) and real-time voice-command interaction usin
                         </li>
 
                         <li
-                            class="bg-gray-700 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
+                            class="bg-gray-100 dark:bg-gray-700 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
                         >
                             <div
                                 class="flex flex-col md:flex-row md:items-center justify-between mb-2"
                             >
                                 <strong
-                                    class="text-indigo-300 text-xl md:text-2xl font-semibold"
+                                    class="text-indigo-700 dark:text-indigo-300 text-xl md:text-2xl font-semibold"
                                 >
                                     <a
                                         href="https://drive.google.com/file/d/1v8ox9d_GPtZT0dN9Ex-ZAQZyTzv67Iba/view?usp=drive_link"
@@ -2003,11 +2015,11 @@ Integrated 2D SLAM (RPLiDAR + Nav2) and real-time voice-command interaction usin
                                     >
                                 </strong>
                                 <span
-                                    class="text-gray-400 italic text-sm md:text-base mt-1 md:mt-0"
+                                    class="text-gray-600 dark:text-gray-400 italic text-sm md:text-base mt-1 md:mt-0"
                                     >Issued by Udemy</span
                                 >
                             </div>
-                            <p class="text-gray-300 text-base">
+                            <p class="text-gray-700 dark:text-gray-300 text-base">
                                 Developed robust Python scripts for automation,
                                 data processing, and application logic
                                 implementation.
@@ -2015,13 +2027,13 @@ Integrated 2D SLAM (RPLiDAR + Nav2) and real-time voice-command interaction usin
                         </li>
 
                         <li
-                            class="bg-gray-700 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
+                            class="bg-gray-100 dark:bg-gray-700 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
                         >
                             <div
                                 class="flex flex-col md:flex-row md:items-center justify-between mb-2"
                             >
                                 <strong
-                                    class="text-indigo-300 text-xl md:text-2xl font-semibold"
+                                    class="text-indigo-700 dark:text-indigo-300 text-xl md:text-2xl font-semibold"
                                 >
                                     <a
                                         href="https://drive.google.com/file/d/1o_dXk26NBdKsUmAGCbGdgkRIYEZmUF9i/view?usp=drive_link"
@@ -2032,11 +2044,11 @@ Integrated 2D SLAM (RPLiDAR + Nav2) and real-time voice-command interaction usin
                                     >
                                 </strong>
                                 <span
-                                    class="text-gray-400 italic text-sm md:text-base mt-1 md:mt-0"
+                                    class="text-gray-600 dark:text-gray-400 italic text-sm md:text-base mt-1 md:mt-0"
                                     >Issued by Udemy</span
                                 >
                             </div>
-                            <p class="text-gray-300 text-base">
+                            <p class="text-gray-700 dark:text-gray-300 text-base">
                                 Applied class-based design, inheritance, and
                                 modular programming in Python for scalable
                                 software solutions.
@@ -2044,13 +2056,13 @@ Integrated 2D SLAM (RPLiDAR + Nav2) and real-time voice-command interaction usin
                         </li>
 
                         <li
-                            class="bg-gray-700 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
+                            class="bg-gray-100 dark:bg-gray-700 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
                         >
                             <div
                                 class="flex flex-col md:flex-row md:items-center justify-between mb-2"
                             >
                                 <strong
-                                    class="text-indigo-300 text-xl md:text-2xl font-semibold"
+                                    class="text-indigo-700 dark:text-indigo-300 text-xl md:text-2xl font-semibold"
                                 >
                                     <a
                                         href="https://drive.google.com/file/d/1SfCChT1ljzU_WfdFw2c_8Ya2P5uHRC2R/view?usp=drive_link"
@@ -2061,11 +2073,11 @@ Integrated 2D SLAM (RPLiDAR + Nav2) and real-time voice-command interaction usin
                                     >
                                 </strong>
                                 <span
-                                    class="text-gray-400 italic text-sm md:text-base mt-1 md:mt-0"
+                                    class="text-gray-600 dark:text-gray-400 italic text-sm md:text-base mt-1 md:mt-0"
                                     >Issued by MathWorks</span
                                 >
                             </div>
-                            <p class="text-gray-300 text-base">
+                            <p class="text-gray-700 dark:text-gray-300 text-base">
                                 Modeled multi-domain physical systems,
                                 integrating electrical, mechanical, and thermal
                                 components for simulations.
@@ -2073,13 +2085,13 @@ Integrated 2D SLAM (RPLiDAR + Nav2) and real-time voice-command interaction usin
                         </li>
 
                         <li
-                            class="bg-gray-700 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
+                            class="bg-gray-100 dark:bg-gray-700 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
                         >
                             <div
                                 class="flex flex-col md:flex-row md:items-center justify-between mb-2"
                             >
                                 <strong
-                                    class="text-indigo-300 text-xl md:text-2xl font-semibold"
+                                    class="text-indigo-700 dark:text-indigo-300 text-xl md:text-2xl font-semibold"
                                 >
                                     <a
                                         href="https://drive.google.com/file/d/1VrQuDMRC2hm2b2mx9a_DMK2N5k9j2kxK/view?usp=drive_link"
@@ -2090,11 +2102,11 @@ Integrated 2D SLAM (RPLiDAR + Nav2) and real-time voice-command interaction usin
                                     >
                                 </strong>
                                 <span
-                                    class="text-gray-400 italic text-sm md:text-base mt-1 md:mt-0"
+                                    class="text-gray-600 dark:text-gray-400 italic text-sm md:text-base mt-1 md:mt-0"
                                     >Issued by MathWorks</span
                                 >
                             </div>
-                            <p class="text-gray-300 text-base">
+                            <p class="text-gray-700 dark:text-gray-300 text-base">
                                 Created block-based models for dynamic system
                                 simulation, feedback control, and event-driven
                                 logic design.
@@ -2102,13 +2114,13 @@ Integrated 2D SLAM (RPLiDAR + Nav2) and real-time voice-command interaction usin
                         </li>
 
                         <li
-                            class="bg-gray-700 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
+                            class="bg-gray-100 dark:bg-gray-700 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
                         >
                             <div
                                 class="flex flex-col md:flex-row md:items-center justify-between mb-2"
                             >
                                 <strong
-                                    class="text-indigo-300 text-xl md:text-2xl font-semibold"
+                                    class="text-indigo-700 dark:text-indigo-300 text-xl md:text-2xl font-semibold"
                                 >
                                     <a
                                         href="https://drive.google.com/file/d/1BO5THPNe5dKIKUs6Izor6iG1AUXXYY1l/view?usp=drive_link"
@@ -2119,11 +2131,11 @@ Integrated 2D SLAM (RPLiDAR + Nav2) and real-time voice-command interaction usin
                                     >
                                 </strong>
                                 <span
-                                    class="text-gray-400 italic text-sm md:text-base mt-1 md:mt-0"
+                                    class="text-gray-600 dark:text-gray-400 italic text-sm md:text-base mt-1 md:mt-0"
                                     >Issued by Udemy</span
                                 >
                             </div>
-                            <p class="text-gray-300 text-base">
+                            <p class="text-gray-700 dark:text-gray-300 text-base">
                                 Practiced relational database management,
                                 optimized queries, and transaction control using
                                 SQL-based systems.
@@ -2131,13 +2143,13 @@ Integrated 2D SLAM (RPLiDAR + Nav2) and real-time voice-command interaction usin
                         </li>
 
                         <li
-                            class="bg-gray-700 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
+                            class="bg-gray-100 dark:bg-gray-700 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
                         >
                             <div
                                 class="flex flex-col md:flex-row md:items-center justify-between mb-2"
                             >
                                 <strong
-                                    class="text-indigo-300 text-xl md:text-2xl font-semibold"
+                                    class="text-indigo-700 dark:text-indigo-300 text-xl md:text-2xl font-semibold"
                                 >
                                     <a
                                         href="https://drive.google.com/file/d/1eSEEwBviFenk6H-K2zcW-z6Ay5t_3O2s/view?usp=drive_link"
@@ -2148,11 +2160,11 @@ Integrated 2D SLAM (RPLiDAR + Nav2) and real-time voice-command interaction usin
                                     >
                                 </strong>
                                 <span
-                                    class="text-gray-400 italic text-sm md:text-base mt-1 md:mt-0"
+                                    class="text-gray-600 dark:text-gray-400 italic text-sm md:text-base mt-1 md:mt-0"
                                     >Issued by NIELIT Calicut</span
                                 >
                             </div>
-                            <p class="text-gray-300 text-base">
+                            <p class="text-gray-700 dark:text-gray-300 text-base">
                                 Explored CMOS circuit design flow, RTL design
                                 concepts, and synthesis techniques for VLSI
                                 systems.
@@ -2165,26 +2177,26 @@ Integrated 2D SLAM (RPLiDAR + Nav2) and real-time voice-command interaction usin
             <!-- Extracurricular Activities Section -->
             <section
                 id="extracurriculars"
-                class="relative container mx-auto px-6 py-16 rounded-lg shadow-xl bg-gray-800 my-16 overflow-hidden animate-on-scroll float-always w-max"
+                class="relative container mx-auto px-6 py-16 rounded-lg shadow-xl bg-white dark:bg-gray-800 my-16 overflow-hidden animate-on-scroll float-always w-max"
             >
                 <h2
-                    class="text-4xl font-bold text-center text-indigo-400 mb-12"
+                    class="text-4xl font-bold text-center text-indigo-600 dark:text-indigo-400 mb-12"
                 >
                     Extracurriculars
                 </h2>
                 <div
-                    class="relative z-10 text-lg text-gray-300 leading-relaxed"
+                    class="relative z-10 text-lg text-gray-700 dark:text-gray-300 leading-relaxed"
                 >
                     <ul class="list-none space-y-6">
                         <li>
                             <h4
-                                class="text-2xl font-semibold text-indigo-300 mb-2"
+                                class="text-2xl font-semibold text-indigo-700 dark:text-indigo-300 mb-2"
                             >
                                 BYTE Workshop – Texas Instruments (May 2025 –
                                 Jul 2025)
                             </h4>
                             <ul
-                                class="list-disc list-inside space-y-2 pl-4 text-gray-400"
+                                class="list-disc list-inside space-y-2 pl-4 text-gray-600 dark:text-gray-400"
                             >
                                 <li>
                                     Selected through a competitive process for a
@@ -2202,13 +2214,13 @@ Integrated 2D SLAM (RPLiDAR + Nav2) and real-time voice-command interaction usin
 
                         <li>
                             <h4
-                                class="text-2xl font-semibold text-indigo-300 mb-2"
+                                class="text-2xl font-semibold text-indigo-700 dark:text-indigo-300 mb-2"
                             >
                                 Robotics Interest Group, NIT Calicut (Oct 2024 –
                                 Present)
                             </h4>
                             <ul
-                                class="list-disc list-inside space-y-2 pl-4 text-gray-400"
+                                class="list-disc list-inside space-y-2 pl-4 text-gray-600 dark:text-gray-400"
                             >
                                 <li>
                                     Contributed to the design and development of
@@ -2226,13 +2238,13 @@ Integrated 2D SLAM (RPLiDAR + Nav2) and real-time voice-command interaction usin
 
                         <li>
                             <h4
-                                class="text-2xl font-semibold text-indigo-300 mb-2"
+                                class="text-2xl font-semibold text-indigo-700 dark:text-indigo-300 mb-2"
                             >
                                 Tathva’24 – Junior Executive, Electrical Section
                                 (Aug 2024 – Present)
                             </h4>
                             <ul
-                                class="list-disc list-inside space-y-2 pl-4 text-gray-400"
+                                class="list-disc list-inside space-y-2 pl-4 text-gray-600 dark:text-gray-400"
                             >
                                 <li>
                                     Led event content, design, and public
@@ -2250,12 +2262,12 @@ Integrated 2D SLAM (RPLiDAR + Nav2) and real-time voice-command interaction usin
 
                         <li>
                             <h4
-                                class="text-2xl font-semibold text-indigo-300 mb-2"
+                                class="text-2xl font-semibold text-indigo-700 dark:text-indigo-300 mb-2"
                             >
                                 Poster Designing
                             </h4>
                             <ul
-                                class="list-disc list-inside space-y-2 pl-4 text-gray-400"
+                                class="list-disc list-inside space-y-2 pl-4 text-gray-600 dark:text-gray-400"
                             >
                                 <li>
                                     Designed event posters and banners,
@@ -2270,12 +2282,12 @@ Integrated 2D SLAM (RPLiDAR + Nav2) and real-time voice-command interaction usin
 
                         <li>
                             <h4
-                                class="text-2xl font-semibold text-indigo-300 mb-2"
+                                class="text-2xl font-semibold text-indigo-700 dark:text-indigo-300 mb-2"
                             >
                                 Event Management (Aug 2024 – Present)
                             </h4>
                             <ul
-                                class="list-disc list-inside space-y-2 pl-4 text-gray-400"
+                                class="list-disc list-inside space-y-2 pl-4 text-gray-600 dark:text-gray-400"
                             >
                                 <li>
                                     Coordinated workshops and successfully
@@ -2291,12 +2303,12 @@ Integrated 2D SLAM (RPLiDAR + Nav2) and real-time voice-command interaction usin
 
                         <li>
                             <h4
-                                class="text-2xl font-semibold text-indigo-300 mb-2"
+                                class="text-2xl font-semibold text-indigo-700 dark:text-indigo-300 mb-2"
                             >
                                 Public Relations Committee(Sep 2023 – Present)
                             </h4>
                             <ul
-                                class="list-disc list-inside space-y-2 pl-4 text-gray-400"
+                                class="list-disc list-inside space-y-2 pl-4 text-gray-600 dark:text-gray-400"
                             >
                                 <li>
                                     Built and maintained sponsor and media
@@ -2312,12 +2324,12 @@ Integrated 2D SLAM (RPLiDAR + Nav2) and real-time voice-command interaction usin
 
                         <li>
                             <h4
-                                class="text-2xl font-semibold text-indigo-300 mb-2"
+                                class="text-2xl font-semibold text-indigo-700 dark:text-indigo-300 mb-2"
                             >
                                 Marketing Committee(Aug 2024 – Present)
                             </h4>
                             <ul
-                                class="list-disc list-inside space-y-2 pl-4 text-gray-400"
+                                class="list-disc list-inside space-y-2 pl-4 text-gray-600 dark:text-gray-400"
                             >
                                 <li>
                                     Executed event promotion strategies across
@@ -2332,12 +2344,12 @@ Integrated 2D SLAM (RPLiDAR + Nav2) and real-time voice-command interaction usin
 
                         <li>
                             <h4
-                                class="text-2xl font-semibold text-indigo-300 mb-2"
+                                class="text-2xl font-semibold text-indigo-700 dark:text-indigo-300 mb-2"
                             >
                                 Taekwondo (Jun 2015 – May 2018)
                             </h4>
                             <ul
-                                class="list-disc list-inside space-y-2 pl-4 text-gray-400"
+                                class="list-disc list-inside space-y-2 pl-4 text-gray-600 dark:text-gray-400"
                             >
                                 <li>
                                     Trained in martial arts and competed in
@@ -2356,15 +2368,15 @@ Integrated 2D SLAM (RPLiDAR + Nav2) and real-time voice-command interaction usin
             <!-- Contact Section -->
             <section
                 id="contact"
-                class="relative container mx-auto px-6 py-16 rounded-lg shadow-xl bg-gray-800 my-16 overflow-hidden animate-on-scroll float-always"
+                class="relative container mx-auto px-6 py-16 rounded-lg shadow-xl bg-white dark:bg-gray-800 my-16 overflow-hidden animate-on-scroll float-always"
             >
                 <h2
-                    class="text-4xl font-bold text-center text-indigo-400 mb-12"
+                    class="text-4xl font-bold text-center text-indigo-600 dark:text-indigo-400 mb-12"
                 >
                     Get in Touch
                 </h2>
                 <div class="max-w-2xl mx-auto relative z-10 text-center">
-                    <p class="text-center text-gray-300 mb-8">
+                    <p class="text-center text-gray-700 dark:text-gray-300 mb-8">
                         Connect with me on:
                     </p>
 
@@ -2373,7 +2385,7 @@ Integrated 2D SLAM (RPLiDAR + Nav2) and real-time voice-command interaction usin
                             href="https://github.com/saitejaswi06"
                             target="_blank"
                             rel="noopener noreferrer"
-                            class="social-icon-link github text-gray-400 hover:text-white transition-colors duration-300"
+                            class="social-icon-link github text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:text-white transition-colors duration-300"
                         >
                             <i class="fab fa-github-square"></i>
                             <span class="sr-only">GitHub</span>
@@ -2382,7 +2394,7 @@ Integrated 2D SLAM (RPLiDAR + Nav2) and real-time voice-command interaction usin
                             href="https://www.linkedin.com/in/uppuluri-sai-tejaswi-61b9b7284/"
                             target="_blank"
                             rel="noopener noreferrer"
-                            class="social-icon-link linkedin text-gray-400 hover:text-white transition-colors duration-300"
+                            class="social-icon-link linkedin text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:text-white transition-colors duration-300"
                         >
                             <i class="fab fa-linkedin"></i>
                             <span class="sr-only">LinkedIn</span>
@@ -2390,7 +2402,7 @@ Integrated 2D SLAM (RPLiDAR + Nav2) and real-time voice-command interaction usin
                         <div class="email-tooltip-container">
                             <a
                                 href="mailto:saitejaswi1002@gmail.com"
-                                class="social-icon-link gmail text-gray-400 hover:text-white transition-colors duration-300"
+                                class="social-icon-link gmail text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:text-white transition-colors duration-300"
                             >
                                 <i class="fas fa-envelope-square"></i>
                                 <span class="sr-only">Email</span>
@@ -2409,7 +2421,7 @@ Integrated 2D SLAM (RPLiDAR + Nav2) and real-time voice-command interaction usin
                         </div>
                     </div>
 
-                    <p class="mt-12 text-gray-400 text-sm">
+                    <p class="mt-12 text-gray-600 dark:text-gray-400 text-sm">
                         Feel free to reach out for collaborations or inquiries!
                     </p>
                 </div>
@@ -2418,12 +2430,12 @@ Integrated 2D SLAM (RPLiDAR + Nav2) and real-time voice-command interaction usin
 
         <!-- Footer -->
         <footer
-            class="bg-gray-900 p-8 text-center text-gray-500 text-sm rounded-t-lg mt-16 float-always animate-on-scroll"
+            class="bg-gray-50 dark:bg-gray-900 p-8 text-center text-gray-500 text-sm rounded-t-lg mt-16 float-always animate-on-scroll"
         >
             <p>
                 &copy; 2025 Sai Tejaswi. All rights reserved. Built with
                 <span class="text-red-500">&hearts;</span> and a lot of
-                <span class="text-indigo-400">code</span>.
+                <span class="text-indigo-600 dark:text-indigo-400">code</span>.
             </p>
         </footer>
 
@@ -2434,10 +2446,10 @@ Integrated 2D SLAM (RPLiDAR + Nav2) and real-time voice-command interaction usin
                     &times;
                 </button>
                 <h3
-                    class="text-3xl font-bold text-indigo-400 mb-4"
+                    class="text-3xl font-bold text-indigo-600 dark:text-indigo-400 mb-4"
                     id="modalTitle"
                 ></h3>
-                <p class="text-gray-300 mb-6" id="modalBriefDescription"></p>
+                <p class="text-gray-700 dark:text-gray-300 mb-6" id="modalBriefDescription"></p>
 
                 <div id="modalTechnologies" class="mb-6">
                     <p class="modal-section-title">Technologies Used:</p>
@@ -2457,7 +2469,7 @@ Integrated 2D SLAM (RPLiDAR + Nav2) and real-time voice-command interaction usin
                         href="#"
                         target="_blank"
                         rel="noopener noreferrer"
-                        class="btn-primary bg-indigo-600 text-white px-6 py-2 rounded-full text-lg font-semibold shadow-md hover:shadow-lg hidden"
+                        class="btn-primary bg-indigo-600 text-gray-900 dark:text-white px-6 py-2 rounded-full text-lg font-semibold shadow-md hover:shadow-lg hidden"
                     >
                         <i class="fas fa-external-link-alt mr-2"></i> Live Demo
                     </a>
@@ -2466,7 +2478,7 @@ Integrated 2D SLAM (RPLiDAR + Nav2) and real-time voice-command interaction usin
                         href="#"
                         target="_blank"
                         rel="noopener noreferrer"
-                        class="btn-primary bg-gray-600 text-gray-200 px-6 py-2 rounded-full text-lg font-semibold shadow-md hover:shadow-lg hidden"
+                        class="btn-primary bg-gray-200 dark:bg-gray-600 text-gray-800 dark:text-gray-200 px-6 py-2 rounded-full text-lg font-semibold shadow-md hover:shadow-lg hidden"
                     >
                         <i class="fab fa-github mr-2"></i> GitHub Repo
                     </a>

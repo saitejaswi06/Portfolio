@@ -1,3 +1,64 @@
+
+// Theme Toggle Logic
+document.addEventListener('DOMContentLoaded', () => {
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeIcon = document.getElementById('theme-icon');
+
+    function setTheme(isDark) {
+        if (isDark) {
+            document.documentElement.classList.add('dark');
+            themeIcon.classList.remove('fa-moon');
+            themeIcon.classList.add('fa-sun');
+            localStorage.setItem('theme', 'dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+            themeIcon.classList.remove('fa-sun');
+            themeIcon.classList.add('fa-moon');
+            localStorage.setItem('theme', 'light');
+        }
+    }
+
+    // Initial theme check
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        setTheme(true);
+    } else {
+        setTheme(false); // Default to light if no preference and not dark mode
+    }
+
+    if (themeToggle) {
+        themeToggle.addEventListener('click', () => {
+            setTheme(!document.documentElement.classList.contains('dark'));
+        });
+    }
+});
+
+// Snow creation logic
+function createSnowflakes() {
+    const bg = document.querySelector(".galaxy-background");
+    if (!bg) return;
+    const numSnowflakes = 100;
+    for (let i = 0; i < numSnowflakes; i++) {
+        const snowflake = document.createElement("div");
+        snowflake.classList.add("snowflake");
+        
+        const size = Math.random() * 5 + 2; 
+        snowflake.style.width = `${size}px`;
+        snowflake.style.height = `${size}px`;
+        snowflake.style.left = `${Math.random() * 100}vw`;
+        
+        const duration = Math.random() * 10 + 5; 
+        snowflake.style.animationDuration = `${duration}s`;
+        
+        const delay = Math.random() * 10;
+        snowflake.style.animationDelay = `-${delay}s`; 
+        
+        const drift = (Math.random() - 0.5) * 20; 
+        snowflake.style.setProperty('--drift', `${drift}vw`);
+        
+        bg.appendChild(snowflake);
+    }
+}
+
 // script.js
 // Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
@@ -626,3 +687,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
+
+
+document.addEventListener('DOMContentLoaded', () => { createSnowflakes(); });
