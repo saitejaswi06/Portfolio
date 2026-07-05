@@ -681,3 +681,60 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 document.addEventListener('DOMContentLoaded', () => { createSnowflakes(); });
+
+
+// Initialize sleek 3D tilt effects
+document.addEventListener('DOMContentLoaded', () => {
+    if (typeof VanillaTilt !== 'undefined') {
+        VanillaTilt.init(document.querySelectorAll(".project-card, .skill-card, li.glassmorphism"), {
+            max: 5,
+            speed: 400,
+            glare: true,
+            "max-glare": 0.15,
+            scale: 1.02
+        });
+    }
+});
+
+
+
+// Technically Cheeky Hacker Text Effect (Fixed)
+const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%&*";
+
+const hackerTexts = document.querySelectorAll('h2'); // ONLY section headings
+
+hackerTexts.forEach(element => {
+    element.addEventListener("mouseenter", event => {
+        let iteration = 0;
+        const target = event.target;
+        
+        // Prevent scrambling if it contains nested HTML elements (like spans)
+        if (target.children.length > 0) return;
+        
+        const originalText = target.dataset.value || target.innerText;
+        if (!target.dataset.value) {
+            target.dataset.value = originalText;
+        }
+        
+        // Clear interval scoped to this specific element so it never gets stuck
+        clearInterval(target.hackerInterval);
+        
+        target.hackerInterval = setInterval(() => {
+            target.innerText = originalText
+                .split("")
+                .map((letter, index) => {
+                    if(index < iteration) {
+                        return originalText[index];
+                    }
+                    return letters[Math.floor(Math.random() * 42)]
+                })
+                .join("");
+            
+            if(iteration >= originalText.length){ 
+                clearInterval(target.hackerInterval);
+                target.innerText = originalText; // Guarantee it returns to normal
+            }
+            iteration += 1 / 2; // Faster decipher to prevent getting stuck
+        }, 30);
+    });
+});

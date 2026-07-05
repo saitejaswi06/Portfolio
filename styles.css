@@ -605,3 +605,97 @@ html.dark .snowflake {
         opacity: 0;
     }
 }
+
+/* Glassmorphism and Neon Styles */
+.glassmorphism {
+    background: rgba(255, 255, 255, 0.7) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+}
+
+html.dark .glassmorphism {
+    background: rgba(15, 23, 42, 0.6) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.neon-hover:hover {
+    box-shadow: 0 0 20px rgba(68, 0, 255, 0.4), 0 0 40px rgba(247, 80, 0, 0.2) !important;
+    border-color: rgba(68, 0, 255, 0.5) !important;
+    transform: translateY(-5px) scale(1.01) !important;
+}
+
+.fira-code {
+    font-family: 'Fira Code', monospace;
+}
+
+/* Flip Animation CSS for Skill Cards */
+.skill-card {
+    perspective: 1000px;
+    background: transparent !important; /* Let inner faces handle backgrounds */
+    border: none !important;
+    backdrop-filter: none !important;
+    box-shadow: none !important;
+    min-height: 180px;
+}
+.skill-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s ease-in-out;
+    transform-style: preserve-3d;
+}
+.skill-card:hover .skill-card-inner {
+    transform: rotateY(180deg);
+}
+.skill-card-front, .skill-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 0.5rem;
+}
+.skill-card-back {
+    transform: rotateY(180deg);
+    overflow-y: auto;
+}
+
+/* Cheeky Glitch Effect */
+.glitch-hover {
+    position: relative;
+    transition: all 0.2s ease;
+}
+.glitch-hover:hover {
+    animation: glitch-anim 0.3s cubic-bezier(.25, .46, .45, .94) both infinite;
+    filter: drop-shadow(0 0 10px rgba(0, 255, 0, 0.8));
+}
+@keyframes glitch-anim {
+    0% { transform: translate(0) }
+    20% { transform: translate(-2px, 2px) }
+    40% { transform: translate(-2px, -2px) }
+    60% { transform: translate(2px, 2px) }
+    80% { transform: translate(2px, -2px) }
+    100% { transform: translate(0) }
+}
+
+
+/* Sleek Techy Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #f1f5f9;
+}
+.dark ::-webkit-scrollbar-track {
+    background: #0f172a;
+}
+::-webkit-scrollbar-thumb {
+    background: #6366f1; /* Indigo-500 */
+    border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #4f46e5; /* Indigo-600 */
+}
